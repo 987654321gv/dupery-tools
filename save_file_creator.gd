@@ -5,6 +5,7 @@ var options:=ConfigFile.new()
 var path_options="user://options.cfg"
 
 @export_tool_button("import") var import_action = import
+@export_tool_button("export") var export_action = _on_button_2_pressed
 
 @export var board:Array[BoardRole]
 
@@ -22,10 +23,13 @@ func import():
 		board[-1].unique_data=role["data"]["unique_data"]
 		board[-1].alignement=role["info"]["alignment"]
 		board[-1].classification=role["info"]["classification"]
-		pass
-	print(data)
-	
-
+		if BoardRole.roles.find_key(board[-1].role) == null:
+			print("new role found :",board[-1].role," with data ",
+			board[-1].datas.get(board[-1].role,""))
+		if board[-1].datas.get(board[-1].role,"") is int:
+			print("new role found :",BoardRole.roles.find_key(board[-1].role)," with data ",
+			board[-1].datas.get(board[-1].role,""))
+			
 func _on_file_dialog_dir_selected(dir: String) -> void:
 	options.set_value("saved_values","save_file_path",dir)
 	options.save(path_options)
