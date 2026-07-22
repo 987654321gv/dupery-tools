@@ -85,9 +85,7 @@ enum roles {PRIVATE_EYE=10000,
 
 func get_string(address:int,position:Vector2i)->String:
 	var dict_infos:={"role_ID":role,"address":address,"pos_x":position.x,"pos_y":position.y}
-	@warning_ignore("integer_division")
 	dict_infos["classification"]=classification
-	@warning_ignore("integer_division")
 	dict_infos["alignment"]=alignement
 	dict_infos["unique_data"]=unique_data
 	return FileAccess.get_file_as_string("res://Role_reference.txt").format(dict_infos)

@@ -1,13 +1,29 @@
+@tool
 extends Node
 
 var options:=ConfigFile.new()
 var path_options="user://options.cfg"
 
+@export_tool_button("import") var import_action = import
+
 @export var board:Array[BoardRole]
 
 
-func _ready() -> void:
+func import():
 	options.load(path_options)
+	var data :Array= JSON.parse_string(FileAccess.open(
+		options.get_value("saved_values","save_file_path")+"/Dupery.save",
+		FileAccess.READ).get_as_text())["data"]["current_case"]["_value"][
+			"Item1"]["board_roles"]
+	board=[]
+	for role in data:
+		board.append(BoardRole.new())
+		board[-1].role=role["data"]["role"]
+		board[-1].unique_data=role["data"]["unique_data"]
+		board[-1].alignement=role["info"]["alignment"]
+		board[-1].classification=role["info"]["classification"]
+		pass
+	print(data)
 	
 
 func _on_file_dialog_dir_selected(dir: String) -> void:
