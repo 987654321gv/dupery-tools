@@ -1,0 +1,254 @@
+{
+	"version": "0.5.51",
+	"data": {
+		"reload_scene": "GameScene",
+		"run_stats": {
+			"run_won": false,
+			"demo_run": true,
+			"play_time": 0.0,
+			"cases_attempted": {
+				"list": []
+			},
+			"cases_solved": {
+				"list": []
+			},
+			"cases_flawless": {
+				"list": []
+			},
+			"regions_completed": {
+				"list": []
+			},
+			"last_region": 4,
+			"combined_case_stats": {
+				"list": []
+			}
+		},
+		"completed_regions": [],
+		"available_roles": [
+			10000,
+			10001,
+			10002,
+			10003,
+			10004,
+			10005,
+			10006,
+			10007,
+			10008,
+			10009,
+			10010,
+			10011,
+			10012,
+			10013,
+			10014,
+			10015,
+			10016,
+			10017,
+			20000,
+			20001,
+			20002,
+			20003,
+			20004,
+			20005,
+			20006,
+			20007,
+			20008,
+			20009,
+			20010,
+			30000,
+			30001,
+			30002,
+			30003,
+			30004,
+			30005,
+			30006,
+			30007,
+			30008,
+			30009,
+			40000,
+			40001,
+			40002,
+			40003,
+			40004,
+			40005
+		],
+		"region": {
+			"region": 4,
+			"quirks": [
+			],
+			"data": "0,0"
+		},
+		"current_case": {
+			"_value": {
+				"Item1": {
+					"case_type": 0,
+					"board_size": {
+						"x": 4,
+						"y": 4
+					},
+					"tutorial_level": {
+						"_value": 0,
+						"_is_some": false
+					},
+					"began": true,
+					"difficulty_01": 0.0,
+					"case_solved": false,
+					"classification_ratio": {
+						"list": [
+							{
+								"Key": 0,
+								"Value": 5
+							},
+							{
+								"Key": 1,
+								"Value": 1
+							},
+							{
+								"Key": 2,
+								"Value": 2
+							},
+							{
+								"Key": 3,
+								"Value": 0
+							}
+						]
+					},
+					"public_classification_ratio": {
+						"list": [
+							{
+								"Key": 0,
+								"Value": 5
+							},
+							{
+								"Key": 1,
+								"Value": 1
+							},
+							{
+								"Key": 2,
+								"Value": 2
+							},
+							{
+								"Key": 3,
+								"Value": 0
+							}
+						]
+					},
+					"active_case_quirks": [],
+					"completed_quirks": [],
+					"suspect_list": [
+						10007,
+						10013,
+						30004
+					],
+					"visual_suspect_list": {
+						"_value": [],
+						"_is_some": false
+					},
+					"board_roles": [						{
+							"data": {
+								"role": {role_ID},
+								"unique_data": "",
+								"ability_exhausted": false,
+								"override_reveal": {
+									"_value": 0,
+									"_is_some": false
+								},
+								"override_visual_class": {
+									"_value": 0,
+									"_is_some": false
+								},
+								"override_visual_alignment": {
+									"_value": 0,
+									"_is_some": false
+								}
+							},
+							"info": {
+								"address": 1,
+								"board_position": {
+									"x": 0,
+									"y": 0
+								},
+								"investigated": true,
+								"arrested": false,
+								"dead": false,
+								"tainted": false,
+								"disguise_tainted": false,
+								"lying": false,
+								"obscured": false,
+								"hidden": false,
+								"alignment": 0,
+								"classification": 1,
+								"blocking_investigation": "",
+								"info_string": {
+									"_value": "",
+									"_is_some": true
+								},
+								"temp_states": ""
+							},
+							"disguise": {
+								"_value": {
+									"role": 0,
+									"unique_data": "",
+									"ability_exhausted": false,
+									"override_reveal": {
+										"_value": 0,
+										"_is_some": false
+									},
+									"override_visual_class": {
+										"_value": 0,
+										"_is_some": false
+									},
+									"override_visual_alignment": {
+										"_value": 0,
+										"_is_some": false
+									}
+								},
+								"_is_some": false
+							}
+						}
+],
+					"board_locations": [
+						{
+							"location_type": 0,
+							"board_position": {
+								"Item1": 3,
+								"Item2": 3
+							},
+							"unique_data": ""
+						}
+					],
+					"location_disguises": {
+						"list": []
+					},
+					"unique_data": "5,0"
+				},
+				"Item2": {
+					"syndicate_clue": false,
+					"data": "0,1"
+				}
+			},
+			"_is_some": true
+		},
+		"pins_data": {
+			"_value": {
+				"pins_data": []
+			},
+			"_is_some": false
+		},
+		"lines_data": {
+			"_value": {
+				"lines_data": [],
+				"suspect_lines": {
+					"list": []
+				}
+			},
+			"_is_some": false
+		},
+		"strings_data": {
+			"_value": {
+				"strings_data": []
+			},
+			"_is_some": false
+		},
+		"available_cases": []
+	}
+}

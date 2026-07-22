@@ -1,0 +1,62 @@
+						{
+							"data": {
+								"role": {role_ID},
+								"unique_data": "{unique_data}",
+								"ability_exhausted": false,
+								"override_reveal": {
+									"_value": 0,
+									"_is_some": false
+								},
+								"override_visual_class": {
+									"_value": 0,
+									"_is_some": false
+								},
+								"override_visual_alignment": {
+									"_value": 0,
+									"_is_some": false
+								}
+							},
+							"info": {
+								"address": {address},
+								"board_position": {
+									"x": {pos_x},
+									"y": {pos_y}
+								},
+								"investigated": false,
+								"arrested": false,
+								"dead": false,
+								"tainted": false,
+								"disguise_tainted": false,
+								"lying": false,
+								"obscured": false,
+								"hidden": false,
+								"alignment": {alignment},
+								"classification": {classification},
+								"blocking_investigation": "",
+								"info_string": {
+									"_value": "",
+									"_is_some": true
+								},
+								"temp_states": ""
+							},
+							"disguise": {
+								"_value": {
+									"role": 0,
+									"unique_data": "",
+									"ability_exhausted": false,
+									"override_reveal": {
+										"_value": 0,
+										"_is_some": false
+									},
+									"override_visual_class": {
+										"_value": 0,
+										"_is_some": false
+									},
+									"override_visual_alignment": {
+										"_value": 0,
+										"_is_some": false
+									}
+								},
+								"_is_some": false
+							}
+						}

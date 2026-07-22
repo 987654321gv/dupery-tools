@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bkq67bxkphea2"]
+
+[ext_resource type="Script" uid="uid://bbn4lyfvp1q2n" path="res://save_file_creator.gd" id="1_ttr2v"]
+[ext_resource type="Script" uid="uid://b37uhw6iecpkw" path="res://board_role.gd" id="2_t7jf3"]
+
+[sub_resource type="Resource" id="Resource_on23d"]
+script = ExtResource("2_t7jf3")
+role = 20000
+classification = 1
+metadata/_custom_type_script = "uid://b37uhw6iecpkw"
+
+[sub_resource type="Resource" id="Resource_t7jf3"]
+script = ExtResource("2_t7jf3")
+role = 30004
+alignement = 1
+classification = 2
+metadata/_custom_type_script = "uid://b37uhw6iecpkw"
+
+[node name="Node" type="Node" unique_id=1030242485]
+script = ExtResource("1_ttr2v")
+board = Array[ExtResource("2_t7jf3")]([SubResource("Resource_on23d"), SubResource("Resource_t7jf3")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=539148617]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1391229790]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Select dir"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1871254988]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Export"
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=700184706]
+oversampling_override = 1.0
+title = "Open a Directory"
+position = Vector2i(0, 36)
+file_mode = 2
+access = 2
+show_hidden_files = true
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]
