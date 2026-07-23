@@ -73,8 +73,7 @@
 		],
 		"region": {
 			"region": 4,
-			"quirks": [
-			],
+			"quirks": {quirks},
 			"data": "0,0"
 		},
 		"current_case": {
@@ -132,7 +131,7 @@
 							}
 						]
 					},
-					"active_case_quirks": [],
+					"active_case_quirks": {quirks},
 					"completed_quirks": [],
 					"suspect_list": [{suspect_list}
 					],

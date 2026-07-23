@@ -4,6 +4,40 @@ extends Node
 var options:=ConfigFile.new()
 var path_options="user://options.cfg"
 
+enum quirks_IDs {EVIL_GAZE=0,
+				 GOOD_INTUITION=1,
+				 DARK_WHISPERS=2,
+				 PUBLIC_FAVOUR=4,
+				 SHOT_IN_THE_DARK=5,
+				 VISIBLE_JUSTICE=6,
+				 SWIFT_JUSTICE=7,
+				 DEADLY_AIM=8,
+				 JEALOUSY=10000,
+				 TICKING_CLOCK=10001,
+				 MISTY_STREETS=10002,
+				 HIDDEN_SMIRK=10003,
+				 BAD_INFLUENCES=10004,
+				 RADIO_INTERFERENCE=10005,
+				 ANTI_AUTHORITARIANISM=10006,
+				 MORTAL_DREAD=10009,
+				 SETUP=10011,
+				 MEDICAL_BREAKTHROUGH=10012,
+				 PARANOIA=10013,
+				 DIRTY_COP=10014,
+				 SILENT_ACCOMPLICE=10015,
+				 INSIDER_LOYALTY=10016,
+				 OUTSIDER_LOYALTY=10017,
+				 UNHOLY_LAND=10018,
+				 SHRINK=10019,
+				 THAT_SMILE=10020,
+				 HAUNTED=10021,
+				 PERFECT_CRIME=10022,
+				 EVIL_SUSPECTS=10023,
+				 BROKEN_CLOCK=10024,
+				 FAULTY_CLOCK=10025,
+				 BROKEN_RADIO=10026}
+
+
 @export_tool_button("import") var import_action = import
 @export_tool_button("export") var export_action = _on_button_2_pressed
 @export var crime_scene_pos:Vector2i:
@@ -12,12 +46,16 @@ var path_options="user://options.cfg"
 			crime_scene_pos=n
 @export var board:Array[BoardRole]
 @export var other_locations:=[]
-
+@export var quirks:Array[quirks_IDs]
 func import():
+	
 	options.load(path_options)
 	var data :Dictionary= JSON.parse_string(FileAccess.open(
 		options.get_value("saved_values","save_file_path")+"/Dupery.save",
 		FileAccess.READ).get_as_text())["data"]["current_case"]["_value"]["Item1"]
+	quirks=[]
+	for quirk in data["active_case_quirks"]:
+		quirks.append(quirk)
 	other_locations=[]
 	for location in data["board_locations"]:
 		if location["location_type"]==0:
@@ -79,5 +117,6 @@ func _on_button_2_pressed() -> void:
 	for location in other_locations:
 		other_locations_str.append(str(location))
 	dict_infos["other_locations"]=",".join(other_locations_str)
+	dict_infos["quirks"]=quirks
 		
 	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))
