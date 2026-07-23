@@ -36,6 +36,10 @@ func import():
 		board[-1].unique_data=role["data"]["unique_data"]
 		board[-1].alignement=role["info"]["alignment"]
 		board[-1].classification=role["info"]["classification"]
+		if role["disguise"]["_is_some"]:
+			board[-1].disguise=BoardRole.new()
+			board[-1].disguise.role=role["disguise"]["_value"]["role"]
+			board[-1].disguise.unique_data=role["disguise"]["_value"]["unique_data"]
 		if BoardRole.roles.find_key(board[-1].role) == null:
 			print("new role found :",board[-1].role," with data ",
 			board[-1].unique_data)
