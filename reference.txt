@@ -145,11 +145,11 @@
 						{
 							"location_type": 0,
 							"board_position": {
-								"Item1": 3,
-								"Item2": 3
+								"Item1": {CrimeScenePos_x},
+								"Item2": {CrimeScenePos_y}
 							},
 							"unique_data": ""
-						}
+						},{other_locations}
 					],
 					"location_disguises": {
 						"list": []

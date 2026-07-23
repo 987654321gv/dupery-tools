@@ -1,9 +1,105 @@
 [gd_scene format=3 uid="uid://bkq67bxkphea2"]
 
 [ext_resource type="Script" uid="uid://bbn4lyfvp1q2n" path="res://save_file_creator.gd" id="1_ttr2v"]
+[ext_resource type="Script" uid="uid://b37uhw6iecpkw" path="res://board_role.gd" id="2_t7jf3"]
+
+[sub_resource type="Resource" id="Resource_t7jf3"]
+script = ExtResource("2_t7jf3")
+role = 30009
+unique_data = "9#"
+alignement = 1.0
+classification = 2.0
+
+[sub_resource type="Resource" id="Resource_on23d"]
+script = ExtResource("2_t7jf3")
+role = 10003
+
+[sub_resource type="Resource" id="Resource_g2oql"]
+script = ExtResource("2_t7jf3")
+role = 10002
+unique_data = "-1,0"
+
+[sub_resource type="Resource" id="Resource_f403w"]
+script = ExtResource("2_t7jf3")
+role = 0
+classification = -1
+
+[sub_resource type="Resource" id="Resource_q7s4j"]
+script = ExtResource("2_t7jf3")
+role = 30001
+alignement = 1.0
+classification = 2.0
+
+[sub_resource type="Resource" id="Resource_gsehj"]
+script = ExtResource("2_t7jf3")
+role = 0
+classification = -1
+
+[sub_resource type="Resource" id="Resource_0id5t"]
+script = ExtResource("2_t7jf3")
+role = 0
+classification = -1
+
+[sub_resource type="Resource" id="Resource_0ehdv"]
+script = ExtResource("2_t7jf3")
+role = 20001
+classification = 1.0
+
+[sub_resource type="Resource" id="Resource_bs5jj"]
+script = ExtResource("2_t7jf3")
+role = 30305
+unique_data = "f#"
+alignement = 1.0
+classification = 2.0
+
+[sub_resource type="Resource" id="Resource_whwtq"]
+script = ExtResource("2_t7jf3")
+role = 10004
+unique_data = "-1,-1,-1"
+
+[sub_resource type="Resource" id="Resource_ohbla"]
+script = ExtResource("2_t7jf3")
+role = 0
+classification = -1
+
+[sub_resource type="Resource" id="Resource_yhaaf"]
+script = ExtResource("2_t7jf3")
+role = 40000
+unique_data = "f,30,8"
+alignement = 1.0
+classification = 3.0
+
+[sub_resource type="Resource" id="Resource_oa70h"]
+script = ExtResource("2_t7jf3")
+role = 0
+classification = -1
+
+[sub_resource type="Resource" id="Resource_wovye"]
+script = ExtResource("2_t7jf3")
+role = 10011
+
+[sub_resource type="Resource" id="Resource_rfe61"]
+script = ExtResource("2_t7jf3")
+role = 20000
+classification = 1.0
+
+[sub_resource type="Resource" id="Resource_fnipy"]
+script = ExtResource("2_t7jf3")
+role = 10008
+unique_data = "-1"
 
 [node name="Node" type="Node" unique_id=1030242485]
 script = ExtResource("1_ttr2v")
+crime_scene_pos = Vector2i(1, 1)
+board = Array[ExtResource("2_t7jf3")]([SubResource("Resource_t7jf3"), SubResource("Resource_on23d"), SubResource("Resource_g2oql"), SubResource("Resource_f403w"), SubResource("Resource_q7s4j"), SubResource("Resource_gsehj"), SubResource("Resource_0id5t"), SubResource("Resource_0ehdv"), SubResource("Resource_bs5jj"), SubResource("Resource_whwtq"), SubResource("Resource_ohbla"), SubResource("Resource_yhaaf"), SubResource("Resource_oa70h"), SubResource("Resource_wovye"), SubResource("Resource_rfe61"), SubResource("Resource_fnipy")])
+other_locations = [{
+"board_position": {
+"Item1": 3.0,
+"Item2": 0.0
+},
+"location_type": 1.0,
+"unique_data": "{\"scheduled_rings\":[{\"Item1\":16,\"Item2\":0}],\"recorded_rings\":[]}"
+}]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=539148617]
 anchors_preset = 15

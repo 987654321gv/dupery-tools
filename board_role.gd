@@ -46,7 +46,8 @@ const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.CONMAN:"0",
 			roles.KINGPIN:"-1,-1"}
 
-enum roles {PRIVATE_EYE=10000,
+enum roles {EMPTY=0,
+			PRIVATE_EYE=10000,
 			REPORTER=10001,
 			ROMANTIC=10002,
 			THERAPIST=10003,
