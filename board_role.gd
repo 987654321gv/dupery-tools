@@ -2,7 +2,7 @@
 class_name BoardRole
 extends Resource
 
-
+const disguise_defaults:={"role":0,"data":"","is_some":false}
 
 const dict_names :={10000:"private eye",
 					10001:"reporter",
@@ -23,7 +23,7 @@ const dict_names :={10000:"private eye",
 					10016:"empath",
 					10017:"researcher"}
 
-var datas={ roles.PRIVATE_EYE:"-1,0",
+const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.REPORTER:"-1",
 			roles.ROMANTIC:"-1,0",
 			roles.WEATHERMAN:"-1,-1,-1",
@@ -95,6 +95,8 @@ enum roles {PRIVATE_EYE=10000,
 			HITMAN=40004,
 			RECRUITER=40005}
 			
+
+			
 @export var role:roles=roles.PRIVATE_EYE:
 	set(n):
 		
@@ -106,13 +108,29 @@ enum roles {PRIVATE_EYE=10000,
 		if datas.get(role,"") is String:
 			unique_data=datas.get(role,"")
 			
+			
+
+@export var unique_data:=""
+@export var disguise:BoardRole
+
+@export_group("override")
 @export_enum("good","evil") var alignement=0
 @export_enum("innocent","meddler","underling","traitor") var classification=0
-@export var unique_data:=""
+
+
 
 func get_string(address:int,position:Vector2i)->String:
 	var dict_infos:={"role_ID":role,"address":address,"pos_x":position.x,"pos_y":position.y}
 	dict_infos["classification"]=classification
 	dict_infos["alignment"]=alignement
 	dict_infos["unique_data"]=unique_data
+	if disguise!=null:
+		dict_infos["disguise"]=disguise.get_disguise_text()
+	else:
+		dict_infos["disguise"]=FileAccess.get_file_as_string("res://Disguise_refernece.txt").format(disguise_defaults)
 	return FileAccess.get_file_as_string("res://Role_reference.txt").format(dict_infos)
+
+func get_disguise_text():
+	return FileAccess.get_file_as_string("res://Disguise_refernece.txt").format({"role":role,"data":unique_data,"is_some":true})
+	
+	

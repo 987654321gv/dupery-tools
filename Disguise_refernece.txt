@@ -1,0 +1,20 @@
+{
+								"_value": {
+									"role": {role},
+									"unique_data": "{data}",
+									"ability_exhausted": false,
+									"override_reveal": {
+										"_value": 0,
+										"_is_some": false
+									},
+									"override_visual_class": {
+										"_value": 0,
+										"_is_some": false
+									},
+									"override_visual_alignment": {
+										"_value": 0,
+										"_is_some": false
+									}
+								},
+								"_is_some": {is_some}
+							}
