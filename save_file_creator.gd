@@ -25,10 +25,10 @@ func import():
 		board[-1].classification=role["info"]["classification"]
 		if BoardRole.roles.find_key(board[-1].role) == null:
 			print("new role found :",board[-1].role," with data ",
-			board[-1].datas.get(board[-1].role,""))
+			board[-1].unique_data)
 		if board[-1].datas.get(board[-1].role,"") is int:
 			print("new role found :",BoardRole.roles.find_key(board[-1].role)," with data ",
-			board[-1].datas.get(board[-1].role,""))
+			board[-1].unique_data)
 			
 func _on_file_dialog_dir_selected(dir: String) -> void:
 	options.set_value("saved_values","save_file_path",dir)

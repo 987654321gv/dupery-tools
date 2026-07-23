@@ -25,7 +25,7 @@ const dict_names :={10000:"private eye",
 
 var datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.REPORTER:"-1",
-			roles.ROMANTIC:10002,
+			roles.ROMANTIC:"-1,0",
 			roles.WEATHERMAN:"-1,-1,-1",
 			roles.BLOOD_HOUND:"-1",
 			roles.SKEPTIC:"-1",
@@ -44,7 +44,7 @@ var datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.SPECTRE:"-1",
 			roles.POISONER:"-1",
 			roles.CONMAN:"0",
-			roles.KINGPIN:40003}
+			roles.KINGPIN:"-1,-1"}
 
 enum roles {PRIVATE_EYE=10000,
 			REPORTER=10001,
@@ -103,8 +103,9 @@ enum roles {PRIVATE_EYE=10000,
 		alignement=(role-10000)/20000
 		@warning_ignore("integer_division")
 		classification=(role/10000)-1
-		unique_data=datas.get(role,"")
-		
+		if datas.get(role,"") is String:
+			unique_data=datas.get(role,"")
+			
 @export_enum("good","evil") var alignement=0
 @export_enum("innocent","meddler","underling","traitor") var classification=0
 @export var unique_data:=""
