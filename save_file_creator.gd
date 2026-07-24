@@ -113,10 +113,13 @@ func _on_button_2_pressed() -> void:
 	dict_infos["suspect_list"]=",".join(suspect_list)
 	dict_infos["CrimeScenePos_x"]=crime_scene_pos.x
 	dict_infos["CrimeScenePos_y"]=crime_scene_pos.y
-	var other_locations_str:PackedStringArray=[]
-	for location in other_locations:
-		other_locations_str.append(str(location))
-	dict_infos["other_locations"]=",".join(other_locations_str)
+	if len(other_locations)==0:
+		dict_infos["other_locations"]=""
+	else:
+		var other_locations_str:PackedStringArray=[]
+		for location in other_locations:
+			other_locations_str.append(str(location))
+		dict_infos["other_locations"]=","+(",".join(other_locations_str))
 	dict_infos["quirks"]=quirks
 		
 	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))

@@ -35,7 +35,7 @@
 								"blocking_investigation": "",
 								"info_string": {
 									"_value": "",
-									"_is_some": true
+									"_is_some": false
 								},
 								"temp_states": ""
 							},

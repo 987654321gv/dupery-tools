@@ -148,7 +148,7 @@
 								"Item2": {CrimeScenePos_y}
 							},
 							"unique_data": ""
-						},{other_locations}
+						}{other_locations}
 					],
 					"location_disguises": {
 						"list": []
