@@ -74,6 +74,13 @@ func import():
 		board[-1].unique_data=role["data"]["unique_data"]
 		board[-1].alignement=role["info"]["alignment"]
 		board[-1].classification=role["info"]["classification"]
+		board[-1].unique_data=role["info"]["unique_data"]
+		board[-1].investigated=role["info"]["investigated"]
+		board[-1].tainted=role["info"]["tainted"]
+		board[-1].arrested=role["info"]["arrested"]
+		board[-1].dead=role["info"]["dead"]
+		board[-1].obscured=role["info"]["obscured"]
+		board[-1].lying=role["info"]["lying"]
 		if role["disguise"]["_is_some"]:
 			board[-1].disguise=BoardRole.new()
 			board[-1].disguise.role=role["disguise"]["_value"]["role"]

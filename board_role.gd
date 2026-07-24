@@ -46,6 +46,8 @@ const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.CONMAN:"0",
 			roles.KINGPIN:"-1,-1"}
 
+const confused := [roles.DRUNKARD,roles.CONMAN]
+
 enum roles {EMPTY=0,
 			PRIVATE_EYE=10000,
 			REPORTER=10001,
@@ -108,16 +110,23 @@ enum roles {EMPTY=0,
 		classification=(role/10000)-1
 		if datas.get(role,"") is String:
 			unique_data=datas.get(role,"")
-			
+		lying=((alignement!=0)!=(role in confused))
+		
 			
 
 @export var unique_data:=""
 @export var disguise:BoardRole
-
 @export_group("override")
 @export_enum("good","evil") var alignement=0
 @export_enum("innocent","meddler","underling","traitor") var classification=0
-
+@export var lying := false
+@export var anouncemnent:=""
+@export_group("other")
+@export var investigated := false
+@export var tainted := false
+@export var arrested := false
+@export var dead := false
+@export var obscured := false
 
 
 func get_string(address:int,position:Vector2i)->String:
@@ -125,6 +134,12 @@ func get_string(address:int,position:Vector2i)->String:
 	dict_infos["classification"]=classification
 	dict_infos["alignment"]=alignement
 	dict_infos["unique_data"]=unique_data
+	dict_infos["investigated"] = investigated
+	dict_infos["tainted"] = tainted
+	dict_infos["arrested"] = arrested
+	dict_infos["dead"] = dead
+	dict_infos["obscured"] = obscured
+	dict_infos["lying"] = lying
 	if disguise!=null:
 		dict_infos["disguise"]=disguise.get_disguise_text()
 	else:
@@ -133,5 +148,3 @@ func get_string(address:int,position:Vector2i)->String:
 
 func get_disguise_text():
 	return FileAccess.get_file_as_string("res://Disguise_refernece.txt").format({"role":role,"data":unique_data,"is_some":true})
-	
-	
