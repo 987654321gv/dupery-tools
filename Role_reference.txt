@@ -34,8 +34,8 @@
 								"classification": {classification},
 								"blocking_investigation": "",
 								"info_string": {
-									"_value": "",
-									"_is_some": false
+									"_value": "{anouncement}",
+									"_is_some": {anouncement_overide}
 								},
 								"temp_states": ""
 							},

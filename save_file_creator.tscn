@@ -7,8 +7,7 @@
 script = ExtResource("2_t7jf3")
 role = 0
 classification = -1
-arrested = null
-dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_on23d"]
 script = ExtResource("2_t7jf3")
@@ -16,15 +15,17 @@ role = 10012
 unique_data = "8"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_g2oql"]
 script = ExtResource("2_t7jf3")
 role = 20004
 disguise = SubResource("Resource_on23d")
-classification = 1.0
-lying = true
 arrested = null
 dead = null
+classification = 1.0
+lying = true
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_f403w"]
 script = ExtResource("2_t7jf3")
@@ -32,49 +33,56 @@ role = 10016
 unique_data = "2"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_q7s4j"]
 script = ExtResource("2_t7jf3")
 role = 20005
 disguise = SubResource("Resource_f403w")
-classification = 1.0
 arrested = null
 dead = null
+classification = 1.0
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_gsehj"]
 script = ExtResource("2_t7jf3")
 role = 0
-classification = -1
 arrested = null
 dead = null
+classification = -1
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_0id5t"]
 script = ExtResource("2_t7jf3")
 role = 20001
-classification = 1.0
 arrested = null
 dead = null
+classification = 1.0
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_0ehdv"]
 script = ExtResource("2_t7jf3")
 role = 0
-classification = -1
 arrested = null
 dead = null
+classification = -1
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_bs5jj"]
 script = ExtResource("2_t7jf3")
 role = 0
-classification = -1
 arrested = null
 dead = null
+classification = -1
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_whwtq"]
 script = ExtResource("2_t7jf3")
 role = 0
-classification = -1
 arrested = null
 dead = null
+classification = -1
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_ohbla"]
 script = ExtResource("2_t7jf3")
@@ -82,46 +90,52 @@ role = 10008
 unique_data = "-1"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_yhaaf"]
 script = ExtResource("2_t7jf3")
 role = 30003
 unique_data = "5"
 disguise = SubResource("Resource_ohbla")
+arrested = null
+dead = null
 alignement = 1.0
 classification = 2.0
 lying = true
-arrested = null
-dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_oa70h"]
 script = ExtResource("2_t7jf3")
 role = 0
-classification = -1
 arrested = null
 dead = null
+classification = -1
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_wovye"]
 script = ExtResource("2_t7jf3")
 unique_data = "6,25"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_rfe61"]
 script = ExtResource("2_t7jf3")
 unique_data = "-1,25"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_fnipy"]
 script = ExtResource("2_t7jf3")
 role = 30007
 disguise = SubResource("Resource_rfe61")
+arrested = null
+dead = null
 alignement = 1.0
 classification = 2.0
 lying = true
-arrested = null
-dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_nfh0y"]
 script = ExtResource("2_t7jf3")
@@ -129,6 +143,7 @@ role = 10016
 unique_data = "7"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_wesmj"]
 script = ExtResource("2_t7jf3")
@@ -136,6 +151,7 @@ role = 10301
 unique_data = "{}"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_fn45c"]
 script = ExtResource("2_t7jf3")
@@ -143,6 +159,7 @@ role = 10013
 unique_data = "4,6,"
 arrested = null
 dead = null
+anouncement = null
 
 [sub_resource type="Resource" id="Resource_t25th"]
 script = ExtResource("2_t7jf3")
@@ -150,6 +167,7 @@ role = 10001
 unique_data = "1"
 arrested = null
 dead = null
+anouncement = null
 
 [node name="Node" type="Node" unique_id=1030242485]
 script = ExtResource("1_ttr2v")

@@ -111,22 +111,23 @@ enum roles {EMPTY=0,
 		if datas.get(role,"") is String:
 			unique_data=datas.get(role,"")
 		lying=((alignement!=0)!=(role in confused))
+		anouncement=""
 		
 			
 
 @export var unique_data:=""
 @export var disguise:BoardRole
-@export_group("override")
-@export_enum("good","evil") var alignement=0
-@export_enum("innocent","meddler","underling","traitor") var classification=0
-@export var lying := false
-@export var anouncemnent:=""
 @export_group("other")
 @export var investigated := false
 @export var tainted := false
 @export var arrested := false
 @export var dead := false
 @export var obscured := false
+@export_group("override")
+@export_enum("good","evil") var alignement=0
+@export_enum("innocent","meddler","underling","traitor") var classification=0
+@export var lying := false
+@export var anouncement:=""
 
 
 func get_string(address:int,position:Vector2i)->String:
@@ -144,7 +145,35 @@ func get_string(address:int,position:Vector2i)->String:
 		dict_infos["disguise"]=disguise.get_disguise_text()
 	else:
 		dict_infos["disguise"]=FileAccess.get_file_as_string("res://Disguise_refernece.txt").format(disguise_defaults)
+	dict_infos["anouncement"] = anouncement
+	dict_infos["anouncement_overide"] = (anouncement!="")
+	
+	
 	return FileAccess.get_file_as_string("res://Role_reference.txt").format(dict_infos)
 
 func get_disguise_text():
 	return FileAccess.get_file_as_string("res://Disguise_refernece.txt").format({"role":role,"data":unique_data,"is_some":true})
+
+func configure_from_data(data:Dictionary):
+	role=data["data"]["role"]
+	unique_data=data["data"]["unique_data"]
+	alignement=data["info"]["alignment"]
+	classification=data["info"]["classification"]
+	unique_data=data["info"]["unique_data"]
+	investigated=data["info"]["investigated"]
+	tainted=data["info"]["tainted"]
+	arrested=data["info"]["arrested"]
+	dead=data["info"]["dead"]
+	obscured=data["info"]["obscured"]
+	lying=data["info"]["lying"]
+	if data["disguise"]["_is_some"]:
+		disguise=BoardRole.new()
+		disguise.role=role["disguise"]["_value"]["role"]
+		disguise.unique_data=role["disguise"]["_value"]["unique_data"]
+	if data["info"]["info_string"]["_is_some"]:
+		anouncement=data["info"]["info_string"]["_is_some"]
+	if roles.find_key(role) == null:
+		print("new role found :",role," with data ",unique_data)
+	if datas.get(role,"") is int:
+		print("new data found :",unique_data," for role ",roles.find_key(role))
+	
