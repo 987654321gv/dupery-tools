@@ -170,7 +170,7 @@ func configure_from_data(data:Dictionary):
 		disguise.role=data["disguise"]["_value"]["role"]
 		disguise.unique_data=data["disguise"]["_value"]["unique_data"]
 	if data["info"]["info_string"]["_is_some"]:
-		anouncement=data["info"]["info_string"]["_is_some"]
+		anouncement=data["info"]["info_string"]["_value"]
 	if roles.find_key(role) == null:
 		print("new role found :",role," with data ",unique_data)
 	if datas.get(role,"") is int:
