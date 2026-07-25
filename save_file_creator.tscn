@@ -40,6 +40,8 @@ investigated = true
 
 [sub_resource type="Resource" id="Resource_0ehdv"]
 script = ExtResource("2_t7jf3")
+role = 10017
+unique_data = "-1"
 
 [sub_resource type="Resource" id="Resource_bs5jj"]
 script = ExtResource("2_t7jf3")
@@ -66,6 +68,10 @@ unique_data = "-1"
 
 [sub_resource type="Resource" id="Resource_oa70h"]
 script = ExtResource("2_t7jf3")
+role = 30007
+alignement = 1
+classification = 2
+lying = true
 
 [sub_resource type="Resource" id="Resource_wovye"]
 script = ExtResource("2_t7jf3")
@@ -93,6 +99,8 @@ classification = -1
 
 [sub_resource type="Resource" id="Resource_wesmj"]
 script = ExtResource("2_t7jf3")
+role = 10014
+unique_data = "-1"
 
 [sub_resource type="Resource" id="Resource_fn45c"]
 script = ExtResource("2_t7jf3")
@@ -140,5 +148,5 @@ access = 2
 show_hidden_files = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="export"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

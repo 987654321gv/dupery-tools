@@ -39,7 +39,7 @@ enum quirks_IDs {EVIL_GAZE=0,
 
 
 @export_tool_button("import") var import_action = import
-@export_tool_button("export") var export_action = _on_button_2_pressed
+@export_tool_button("export") var export_action = export
 @export var crime_scene_pos:Vector2i:
 	set(n):
 		if n.x<4 and n.y<4 and n.x>=0 and n.y>=0:
@@ -83,7 +83,7 @@ func _on_button_pressed() -> void:
 	
 
 
-func _on_button_2_pressed() -> void:
+func export() -> void:
 	options.load(path_options)
 	var ref := FileAccess.get_file_as_string("res://reference.txt")
 	var list_str_roles:PackedStringArray=[]
