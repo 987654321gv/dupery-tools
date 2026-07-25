@@ -5,183 +5,114 @@
 
 [sub_resource type="Resource" id="Resource_t7jf3"]
 script = ExtResource("2_t7jf3")
-role = 0
-classification = -1
-anouncement = null
+role = 10014
+unique_data = "-1"
 
 [sub_resource type="Resource" id="Resource_on23d"]
 script = ExtResource("2_t7jf3")
-role = 10012
-unique_data = "8"
-arrested = null
-dead = null
-anouncement = null
+role = 0
+classification = -1
 
 [sub_resource type="Resource" id="Resource_g2oql"]
 script = ExtResource("2_t7jf3")
-role = 20004
-disguise = SubResource("Resource_on23d")
-arrested = null
-dead = null
-classification = 1.0
-lying = true
-anouncement = null
+role = 10002
+unique_data = "-1,0"
 
 [sub_resource type="Resource" id="Resource_f403w"]
 script = ExtResource("2_t7jf3")
-role = 10016
-unique_data = "2"
-arrested = null
-dead = null
-anouncement = null
+role = 0
+classification = -1
 
 [sub_resource type="Resource" id="Resource_q7s4j"]
 script = ExtResource("2_t7jf3")
-role = 20005
-disguise = SubResource("Resource_f403w")
-arrested = null
-dead = null
-classification = 1.0
-anouncement = null
+role = 0
+classification = -1
 
 [sub_resource type="Resource" id="Resource_gsehj"]
 script = ExtResource("2_t7jf3")
-role = 0
-arrested = null
-dead = null
-classification = -1
-anouncement = null
+role = 10009
 
 [sub_resource type="Resource" id="Resource_0id5t"]
 script = ExtResource("2_t7jf3")
-role = 20001
-arrested = null
-dead = null
-classification = 1.0
-anouncement = null
+role = 10301
+unique_data = "{}"
+investigated = true
 
 [sub_resource type="Resource" id="Resource_0ehdv"]
 script = ExtResource("2_t7jf3")
-role = 0
-arrested = null
-dead = null
-classification = -1
-anouncement = null
 
 [sub_resource type="Resource" id="Resource_bs5jj"]
 script = ExtResource("2_t7jf3")
-role = 0
-arrested = null
-dead = null
-classification = -1
-anouncement = null
+role = 30001
+disguise = SubResource("Resource_0ehdv")
+alignement = 1.0
+classification = 2.0
+lying = true
 
 [sub_resource type="Resource" id="Resource_whwtq"]
 script = ExtResource("2_t7jf3")
 role = 0
-arrested = null
-dead = null
 classification = -1
-anouncement = null
 
 [sub_resource type="Resource" id="Resource_ohbla"]
 script = ExtResource("2_t7jf3")
-role = 10008
-unique_data = "-1"
-arrested = null
-dead = null
-anouncement = null
+role = 0
+classification = -1
 
 [sub_resource type="Resource" id="Resource_yhaaf"]
 script = ExtResource("2_t7jf3")
-role = 30003
-unique_data = "5"
-disguise = SubResource("Resource_ohbla")
-arrested = null
-dead = null
-alignement = 1.0
-classification = 2.0
-lying = true
-anouncement = null
+role = 10008
+unique_data = "-1"
 
 [sub_resource type="Resource" id="Resource_oa70h"]
 script = ExtResource("2_t7jf3")
-role = 0
-arrested = null
-dead = null
-classification = -1
-anouncement = null
 
 [sub_resource type="Resource" id="Resource_wovye"]
 script = ExtResource("2_t7jf3")
-unique_data = "6,25"
-arrested = null
-dead = null
-anouncement = null
+role = 20008
+unique_data = "8"
+disguise = SubResource("Resource_oa70h")
+classification = 1.0
 
 [sub_resource type="Resource" id="Resource_rfe61"]
 script = ExtResource("2_t7jf3")
-unique_data = "-1,25"
-arrested = null
-dead = null
-anouncement = null
-
-[sub_resource type="Resource" id="Resource_fnipy"]
-script = ExtResource("2_t7jf3")
 role = 30007
-disguise = SubResource("Resource_rfe61")
-arrested = null
-dead = null
 alignement = 1.0
 classification = 2.0
 lying = true
-anouncement = null
+
+[sub_resource type="Resource" id="Resource_fnipy"]
+script = ExtResource("2_t7jf3")
+role = 0
+classification = -1
 
 [sub_resource type="Resource" id="Resource_nfh0y"]
 script = ExtResource("2_t7jf3")
-role = 10016
-unique_data = "7"
-arrested = null
-dead = null
-anouncement = null
+role = 0
+classification = -1
 
 [sub_resource type="Resource" id="Resource_wesmj"]
 script = ExtResource("2_t7jf3")
-role = 10301
-unique_data = "{}"
-arrested = null
-dead = null
-anouncement = null
 
 [sub_resource type="Resource" id="Resource_fn45c"]
 script = ExtResource("2_t7jf3")
-role = 10013
-unique_data = "4,6,"
-arrested = null
-dead = null
-anouncement = null
-
-[sub_resource type="Resource" id="Resource_t25th"]
-script = ExtResource("2_t7jf3")
-role = 10001
-unique_data = "1"
-arrested = null
-dead = null
-anouncement = null
+role = 20005
+disguise = SubResource("Resource_wesmj")
+classification = 1.0
 
 [node name="Node" type="Node" unique_id=1030242485]
 script = ExtResource("1_ttr2v")
-crime_scene_pos = Vector2i(1, 1)
-board = Array[ExtResource("2_t7jf3")]([SubResource("Resource_t7jf3"), SubResource("Resource_g2oql"), SubResource("Resource_q7s4j"), SubResource("Resource_gsehj"), SubResource("Resource_0id5t"), SubResource("Resource_0ehdv"), SubResource("Resource_bs5jj"), SubResource("Resource_whwtq"), SubResource("Resource_yhaaf"), SubResource("Resource_oa70h"), SubResource("Resource_wovye"), SubResource("Resource_fnipy"), SubResource("Resource_nfh0y"), SubResource("Resource_wesmj"), SubResource("Resource_fn45c"), SubResource("Resource_t25th")])
+crime_scene_pos = Vector2i(2, 3)
+board = Array[ExtResource("2_t7jf3")]([SubResource("Resource_t7jf3"), SubResource("Resource_on23d"), SubResource("Resource_g2oql"), SubResource("Resource_f403w"), SubResource("Resource_q7s4j"), SubResource("Resource_gsehj"), SubResource("Resource_0id5t"), SubResource("Resource_bs5jj"), SubResource("Resource_whwtq"), SubResource("Resource_ohbla"), SubResource("Resource_yhaaf"), SubResource("Resource_wovye"), SubResource("Resource_rfe61"), SubResource("Resource_fnipy"), SubResource("Resource_nfh0y"), SubResource("Resource_fn45c")])
 other_locations = [{
 "board_position": {
-"Item1": 0.0,
+"Item1": 1.0,
 "Item2": 0.0
 },
 "location_type": 1.0,
-"unique_data": "{\"scheduled_rings\":[],\"recorded_rings\":[9]}"
+"unique_data": "{\"scheduled_rings\":[{\"Item1\":1,\"Item2\":0}],\"recorded_rings\":[]}"
 }]
-quirks = Array[int]([10000, 5])
+quirks = Array[int]([10019])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=539148617]
 anchors_preset = 15

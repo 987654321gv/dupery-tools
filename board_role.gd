@@ -159,7 +159,6 @@ func configure_from_data(data:Dictionary):
 	unique_data=data["data"]["unique_data"]
 	alignement=data["info"]["alignment"]
 	classification=data["info"]["classification"]
-	unique_data=data["info"]["unique_data"]
 	investigated=data["info"]["investigated"]
 	tainted=data["info"]["tainted"]
 	arrested=data["info"]["arrested"]
@@ -168,8 +167,8 @@ func configure_from_data(data:Dictionary):
 	lying=data["info"]["lying"]
 	if data["disguise"]["_is_some"]:
 		disguise=BoardRole.new()
-		disguise.role=role["disguise"]["_value"]["role"]
-		disguise.unique_data=role["disguise"]["_value"]["unique_data"]
+		disguise.role=data["disguise"]["_value"]["role"]
+		disguise.unique_data=data["disguise"]["_value"]["unique_data"]
 	if data["info"]["info_string"]["_is_some"]:
 		anouncement=data["info"]["info_string"]["_is_some"]
 	if roles.find_key(role) == null:

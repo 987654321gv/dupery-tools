@@ -70,27 +70,9 @@ func import():
 			board[-1].role=BoardRole.roles.EMPTY
 			
 		board.append(BoardRole.new())
-		board[-1].role=role["data"]["role"]
-		board[-1].unique_data=role["data"]["unique_data"]
-		board[-1].alignement=role["info"]["alignment"]
-		board[-1].classification=role["info"]["classification"]
-		board[-1].unique_data=role["info"]["unique_data"]
-		board[-1].investigated=role["info"]["investigated"]
-		board[-1].tainted=role["info"]["tainted"]
-		board[-1].arrested=role["info"]["arrested"]
-		board[-1].dead=role["info"]["dead"]
-		board[-1].obscured=role["info"]["obscured"]
-		board[-1].lying=role["info"]["lying"]
-		if role["disguise"]["_is_some"]:
-			board[-1].disguise=BoardRole.new()
-			board[-1].disguise.role=role["disguise"]["_value"]["role"]
-			board[-1].disguise.unique_data=role["disguise"]["_value"]["unique_data"]
-		if BoardRole.roles.find_key(board[-1].role) == null:
-			print("new role found :",board[-1].role," with data ",
-			board[-1].unique_data)
-		if board[-1].datas.get(board[-1].role,"") is int:
-			print("new role found :",BoardRole.roles.find_key(board[-1].role)," with data ",
-			board[-1].unique_data)
+		board[-1].configure_from_data(role)
+		
+			
 			
 func _on_file_dialog_dir_selected(dir: String) -> void:
 	options.set_value("saved_values","save_file_path",dir)
