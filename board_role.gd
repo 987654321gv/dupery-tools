@@ -100,7 +100,7 @@ enum roles {EMPTY=0,
 			
 
 			
-@export var role:roles=roles.PRIVATE_EYE:
+@export var role:roles=roles.EMPTY:
 	set(n):
 		
 		role=n

@@ -47,8 +47,9 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var board:Array[BoardRole]
 @export var other_locations:=[]
 @export var quirks:Array[quirks_IDs]
+@export var ban_list:Array[BoardRole.roles]
+
 func import():
-	
 	options.load(path_options)
 	var data :Dictionary= JSON.parse_string(FileAccess.open(
 		options.get_value("saved_values","save_file_path")+"/Dupery.save",
@@ -67,7 +68,7 @@ func import():
 		for __ in range(role["info"]["board_position"]["x"]+
 						role["info"]["board_position"]["y"]*4-len(board)):
 			board.append(BoardRole.new())
-			board[-1].role=BoardRole.roles.EMPTY
+			#board[-1].role=BoardRole.roles.EMPTY
 			
 		board.append(BoardRole.new())
 		board[-1].configure_from_data(role)
@@ -110,5 +111,10 @@ func export() -> void:
 			other_locations_str.append(str(location))
 		dict_infos["other_locations"]=","+(",".join(other_locations_str))
 	dict_infos["quirks"]=quirks
-		
+	var available_roles:=[]
+	for role in BoardRole.roles.values():
+		if role not in ban_list and role != 0:
+			available_roles.append(role)
+	dict_infos["available_roles"]=available_roles
+	
 	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))
