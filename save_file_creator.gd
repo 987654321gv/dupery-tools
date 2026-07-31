@@ -1,6 +1,9 @@
 @tool
 extends Node
 
+const auto_solve:=false
+const raw_extract:=false
+
 var options:=ConfigFile.new()
 var path_options="user://options.cfg"
 
@@ -49,9 +52,19 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var quirks:Array[quirks_IDs]
 @export var ban_list:Array[BoardRole.roles]
 
+@export var raw_data:Dictionary
+
 func import():
+	
 	options.load(path_options)
-	var data :Dictionary= JSON.parse_string(FileAccess.open(
+	
+	if raw_extract:
+		raw_data=JSON.parse_string(FileAccess.open(
+		options.get_value("saved_values","save_file_path")+"/Dupery.save",
+		FileAccess.READ).get_as_text())
+		
+		return
+	var data:Dictionary=JSON.parse_string(FileAccess.open(
 		options.get_value("saved_values","save_file_path")+"/Dupery.save",
 		FileAccess.READ).get_as_text())["data"]["current_case"]["_value"]["Item1"]
 	quirks=[]
@@ -72,8 +85,14 @@ func import():
 			
 		board.append(BoardRole.new())
 		board[-1].configure_from_data(role)
-		
+		if auto_solve:
+			if board[-1].alignement==1:
+				print("evil found : ",int(role["info"]["address"]))
+				if board[-1].role==BoardRole.roles.SCOUNDREL:
+					print("Warning arrest last !")
 			
+
+
 			
 func _on_file_dialog_dir_selected(dir: String) -> void:
 	options.set_value("saved_values","save_file_path",dir)
@@ -86,6 +105,9 @@ func _on_button_pressed() -> void:
 
 func export() -> void:
 	options.load(path_options)
+	if raw_data:
+		FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(JSON.stringify(raw_data))
+		return
 	var ref := FileAccess.get_file_as_string("res://reference.txt")
 	var list_str_roles:PackedStringArray=[]
 	var suspect_list:PackedStringArray=[]
