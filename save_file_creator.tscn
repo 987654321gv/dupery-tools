@@ -1,28 +1,6 @@
 [gd_scene format=3 uid="uid://bkq67bxkphea2"]
 
 [ext_resource type="Script" uid="uid://bbn4lyfvp1q2n" path="res://save_file_creator.gd" id="1_ttr2v"]
-[ext_resource type="Script" uid="uid://b37uhw6iecpkw" path="res://board_role.gd" id="2_t7jf3"]
-
-[sub_resource type="Resource" id="Resource_t7jf3"]
-script = ExtResource("2_t7jf3")
-role = 10009
-
-[sub_resource type="Resource" id="Resource_on23d"]
-script = ExtResource("2_t7jf3")
-role = 10009
-metadata/_custom_type_script = "uid://b37uhw6iecpkw"
-
-[sub_resource type="Resource" id="Resource_g2oql"]
-script = ExtResource("2_t7jf3")
-role = 30000
-unique_data = "-1"
-disguise = SubResource("Resource_on23d")
-alignement = 1
-classification = 2
-lying = true
-metadata/_custom_type_script = "uid://b37uhw6iecpkw"
 
 [node name="Node" type="Node" unique_id=1030242485]
 script = ExtResource("1_ttr2v")
-crime_scene_pos = Vector2i(3, 3)
-board = Array[ExtResource("2_t7jf3")]([SubResource("Resource_t7jf3"), SubResource("Resource_g2oql")])

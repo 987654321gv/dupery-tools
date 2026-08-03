@@ -38,12 +38,6 @@ func _on_exit_pressed() -> void:
 	role_data.lying=%Lying.button_pressed
 	role_data.anouncement=%Announcement.text
 	role_data.unique_data=%"Unique Data".text
-	if %Disguise.get_selected_id()!=BoardRole.roles.EMPTY:
-		role_data.disguise=BoardRole.new()
-		role_data.disguise.role=%Disguise.get_selected_id()
-		role_data.disguise.unique_data=%"Disguise Data".text
-	elif role_data.disguise!=null:
-		role_data.disguise=null
 	exit.emit()
 
 
