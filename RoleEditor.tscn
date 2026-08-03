@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://c0wy38jvf6v8s"]
+
+[ext_resource type="Script" uid="uid://bxf6cky102kgb" path="res://role_editor.gd" id="1_d86pu"]
+
+[node name="RoleEditor" type="Control" unique_id=1907900502]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d86pu")
+
+[node name="HFlowContainer" type="VBoxContainer" parent="." unique_id=532862893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Role" type="OptionButton" parent="HFlowContainer" unique_id=315468157]
+unique_name_in_owner = true
+layout_mode = 2
+search_bar_enabled = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HFlowContainer" unique_id=1249327771]
+layout_mode = 2
+
+[node name="Investigated" type="CheckBox" parent="HFlowContainer/HFlowContainer" unique_id=703783019]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Investigated"
+
+[node name="Tainted" type="CheckBox" parent="HFlowContainer/HFlowContainer" unique_id=2000466153]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tainted"
+
+[node name="Arrested" type="CheckBox" parent="HFlowContainer/HFlowContainer" unique_id=57930470]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Arrested"
+
+[node name="Dead" type="CheckBox" parent="HFlowContainer/HFlowContainer" unique_id=1167039082]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dead"
+
+[node name="Obscured" type="CheckBox" parent="HFlowContainer/HFlowContainer" unique_id=609296082]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Obscured"
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="HFlowContainer" unique_id=182701347]
+layout_mode = 2
+title = "Disguise"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HFlowContainer/FoldableContainer2" unique_id=1691329216]
+layout_mode = 2
+
+[node name="Disguise" type="OptionButton" parent="HFlowContainer/FoldableContainer2/HFlowContainer" unique_id=941174019]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HFlowContainer/FoldableContainer2/HFlowContainer" unique_id=941754114]
+layout_mode = 2
+text = "Unique data :"
+
+[node name="Disguise Data" type="LineEdit" parent="HFlowContainer/FoldableContainer2/HFlowContainer" unique_id=865680680]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="HFlowContainer" unique_id=1284420425]
+layout_mode = 2
+folded = true
+title = "Overrides"
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="HFlowContainer/FoldableContainer" unique_id=1682908986]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=1240242725]
+layout_mode = 2
+text = "allignement : "
+
+[node name="Allignement" type="OptionButton" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=1524434743]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "good"
+popup/item_0/id = 0
+popup/item_1/text = "evil"
+popup/item_1/id = 1
+
+[node name="Label2" type="Label" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=290894226]
+layout_mode = 2
+text = "classification : "
+
+[node name="Classification" type="OptionButton" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=1525238964]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "innocent"
+popup/item_0/id = 0
+popup/item_1/text = "meddler"
+popup/item_1/id = 2
+popup/item_2/text = "underling"
+popup/item_2/id = 1
+popup/item_3/text = "traitor"
+popup/item_3/id = 3
+
+[node name="Lying" type="CheckBox" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=200701827]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lying"
+
+[node name="Announcement" type="LineEdit" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=958038412]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Override announcement"
+expand_to_text_length = true
+
+[node name="Label3" type="Label" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=1130707313]
+layout_mode = 2
+text = "Unique data :"
+
+[node name="Unique Data" type="LineEdit" parent="HFlowContainer/FoldableContainer/HFlowContainer2" unique_id=1374535307]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="HFlowContainer" unique_id=179143418]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="item_selected" from="HFlowContainer/Role" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="HFlowContainer/FoldableContainer2/HFlowContainer/Disguise" to="." method="_on_disguise_item_selected"]
+[connection signal="pressed" from="HFlowContainer/Exit" to="." method="_on_exit_pressed"]

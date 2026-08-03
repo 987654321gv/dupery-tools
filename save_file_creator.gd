@@ -1,5 +1,6 @@
 @tool
 extends Node
+class_name SaveFileditor
 
 const auto_solve:=false
 const raw_extract:=false
@@ -94,12 +95,8 @@ func import():
 
 
 			
-func _on_file_dialog_dir_selected(dir: String) -> void:
-	options.set_value("saved_values","save_file_path",dir)
-	options.save(path_options)
 
-func _on_button_pressed() -> void:
-	$FileDialog.show()
+
 	
 
 
