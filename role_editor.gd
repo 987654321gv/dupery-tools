@@ -7,6 +7,24 @@ var role_data:=BoardRole.new():
 	set(n):
 		role_data=n
 		%Role.select(%Role.get_item_index(role_data.role))
+		%Investigated.button_pressed=role_data.investigated
+		%Tainted.button_pressed=role_data.tainted
+		%Arrested.button_pressed=role_data.arrested
+		%Dead.button_pressed=role_data.dead
+		%Obscured.button_pressed=role_data.obscured
+		if role_data.disguise!=null:
+			%Disguise.select(%Disguise.get_item_index(role_data.disguise.role))
+			%"Disguise Data".text=role_data.disguise.unique_data
+		%Allignement.select(role_data.alignement)
+		%Classification.select(role_data.classification)
+		%Lying.button_pressed=role_data.lying
+		%Announcement.text=role_data.anouncement
+		%"Unique Data".text=role_data.unique_data
+		
+		
+		
+		
+		
 
 
 func _ready() -> void:

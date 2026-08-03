@@ -15,6 +15,7 @@ func _on_pressed() -> void:
 	role_editor.exit.connect(w.queue_free)
 	role_editor.exit.connect(on_role_editor_exited)
 	role_editor.role_data=role_data
+	w.close_requested.connect(role_editor._on_exit_pressed)
 
 func on_role_editor_exited():
 	if role_data.role==BoardRole.roles.EMPTY:
