@@ -11,6 +11,7 @@ func _on_pressed() -> void:
 	w.add_child(role_editor)
 	w.size=Vector2(1000,500)
 	w.move_to_center()
+	w.close_requested.connect(role_editor._on_exit_pressed)
 	resized.connect(w.move_to_center)
 	role_editor.exit.connect(w.queue_free)
 	role_editor.exit.connect(on_role_editor_exited)
