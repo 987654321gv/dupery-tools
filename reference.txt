@@ -107,7 +107,7 @@
 					"location_disguises": {
 						"list": []
 					},
-					"unique_data": "5,0"
+					"unique_data": "{reputation},{time}"
 				},
 				"Item2": {
 					"syndicate_clue": false,

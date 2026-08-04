@@ -52,8 +52,13 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var other_locations:=[]
 @export var quirks:Array[quirks_IDs]
 @export var ban_list:Array[BoardRole.roles]
+@export var reputation:=5
+@export var time:=0
+
 
 @export var raw_data:Dictionary
+
+
 
 func import():
 	
@@ -135,5 +140,7 @@ func export() -> void:
 		if role not in ban_list and role != 0:
 			available_roles.append(role)
 	dict_infos["available_roles"]=available_roles
+	dict_infos["reputation"]=reputation
+	dict_infos["time"]=time
 	
 	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))
