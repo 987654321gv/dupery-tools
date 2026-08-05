@@ -176,3 +176,11 @@ func configure_from_data(data:Dictionary):
 	if datas.get(role,"") is int:
 		print("new data found :",unique_data," for role ",roles.find_key(role))
 	
+func get_str_role()->String:
+	if role==roles.EMPTY:
+		return ""
+	elif roles.values().has(role):
+		return roles.find_key(role)
+	else:
+		return str(role)
+		

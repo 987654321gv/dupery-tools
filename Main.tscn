@@ -79,6 +79,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Choose directory"
 
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=665618172]
+layout_mode = 2
+text = "Import"
+
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=411564848]
 layout_mode = 2
 text = "Export"
@@ -95,5 +99,6 @@ script = ExtResource("3_r0du0")
 metadata/_custom_type_script = "uid://bbn4lyfvp1q2n"
 
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_select_dir_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_import_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_export_pressed"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

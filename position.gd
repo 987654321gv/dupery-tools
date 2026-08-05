@@ -25,7 +25,6 @@ func on_role_editor_exited():
 	if role_data.role==BoardRole.roles.EMPTY:
 		text=""
 	elif role_data.disguise!=null:
-		text="%s (%s)"%[BoardRole.roles.find_key(role_data.role),BoardRole.roles.find_key(role_data.disguise.role)]
+		text="%s (%s)"%[role_data.get_str_role(),role_data.disguise.get_str_role()]
 	else:
-		text=BoardRole.roles.find_key(role_data.role)
-	
+		text=role_data.get_str_role()
