@@ -17,3 +17,4 @@ func _on_file_dialog_dir_selected(dir: String) -> void:
 
 func _on_export_pressed() -> void:
 	$SaveFileditor.export()
+	print("export successful!")
