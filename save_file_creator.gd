@@ -50,7 +50,15 @@ enum quirks_IDs {EVIL_GAZE=0,
 			crime_scene_pos=n
 @export var board:Array[BoardRole]
 @export var other_locations:=[]
-@export var quirks:Array[quirks_IDs]
+@export var quirks:Array[quirks_IDs]:
+	set(n):
+		if len(n)<len(quirks):
+			quirks = n
+		else:
+			if len(n)>1 and n[len(n)-1] in quirks:
+				var quirks_IDs_values = quirks_IDs.values()
+				n[len(n)-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1] 
+			quirks = n
 @export var ban_list:Array[BoardRole.roles]
 @export var reputation:=5
 @export var time:=0
@@ -140,6 +148,7 @@ func export() -> void:
 		if role not in ban_list and role != 0:
 			available_roles.append(role)
 	dict_infos["available_roles"]=available_roles
+	print(dict_infos["available_roles"])
 	dict_infos["reputation"]=reputation
 	dict_infos["time"]=time
 	
