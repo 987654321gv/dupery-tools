@@ -4,6 +4,7 @@ class_name SaveFileditor
 
 const auto_solve:=false
 const raw_extract:=false
+const add_quirks_in_order:=true
 
 var options:=ConfigFile.new()
 var path_options="user://options.cfg"
@@ -52,7 +53,7 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var other_locations:=[]
 @export var quirks:Array[quirks_IDs]:
 	set(n):
-		if len(n)<len(quirks):
+		if len(n)<=len(quirks) or not add_quirks_in_order:
 			quirks = n
 		else:
 			if len(n)>1 and n[len(n)-1] in quirks:
