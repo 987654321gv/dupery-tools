@@ -1,5 +1,5 @@
 {
-	"version": "0.7.21",
+	"version": "0.7.23",
 	"data": {
 		"reload_scene": "GameScene",
 		"run_stats": {
@@ -28,8 +28,8 @@
 					}
 				],
 				"lead_difficulty": {
-					"min": 0.14212976396083833,
-					"max": 0.8621297478675842
+					"min": {difficulty},
+					"max": {difficulty}
 				},
 				"max_case": 8,
 				"current_case": 0,
@@ -58,7 +58,7 @@
 					"_is_some": false
 				},
 				"began": true,
-				"difficulty_01": 0.14212976396083833,
+				"difficulty_01": {difficulty},
 				"case_solved": false,
 				"classification_ratio": {
 					"list": [
