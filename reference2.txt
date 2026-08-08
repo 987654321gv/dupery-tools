@@ -1,158 +1,686 @@
 {
-	"version": "0.7.21",
-	"data": {
-		"reload_scene": "GameScene",
-		"run_stats": {
-			"run_won": false,
-			"lead_stats": []
-		},
-		"clues": [],
-		"tutorial": {
-			"_value": {
-				"Item1": 0,
-				"Item2": 0
-			},
-			"_is_some": false
-		},
-		"region": 2,
-		"available_leads": [],
-		"current_lead": {
-			"_value": {
-				"case_type": 0,
-				"available_roles": [{available_roles}
-				],
-				"grid_sizes": [
+	"version":"0.7.23",
+	"data":{
+		"reload_scene":"GameScene",
+		"run_stats":{
+			"run_won":false,
+			"lead_stats":[
+				]
+			}
+		,
+		"clues":[
+			]
+		,
+		"tutorial":{
+			"_value":{
+				"Item1":0,
+				"Item2":0}
+			,
+			"_is_some":false}
+		,
+		"region":2,
+		"available_leads":[
+			]
+		,
+		"current_lead":{
+			"_value":{
+				"case_type":0,
+				"available_roles":[
+					10002,
+					10013,
+					20006,
+					30001,
+					30009,
+					10008,
+					20000,
+					30008,
+					40004,
+					10022,
+					10023,
+					20011,
+					30011,
+					40008,
+					10005,
+					30000,
+					40001,
+					10003,
+					10014,
+					30005,
+					40003,
+					10006,
+					10015,
+					20001,
+					30004,
+					40000,
+					10009,
+					10000,
+					10007,
+					10001,
+					10017,
+					20007,
+					30007,
+					10010,
+					30002,
+					30006,
+					20008,
+					20005,
+					20004,
+					10016,
+					20003]
+				,
+				"grid_sizes":[
 					{
-						"x": 4,
-						"y": 4
+						"x":3,
+						"y":3}
+					]
+				,
+				"lead_difficulty":{
+					"min":0.13244780898094178,
+					"max":0.8524478077888489}
+				,
+				"max_case":8,
+				"current_case":0,
+				"prime_suspect_set":{
+					"set_name":"Obsessed Set",
+					"lead_suffix":"THE OBSESSED",
+					"set_roles":[
+						10002,
+						10013,
+						20006,
+						30001,
+						30009]
 					}
-				],
-				"lead_difficulty": {
-					"min": 0.14212976396083833,
-					"max": 0.8621297478675842
-				},
-				"max_case": 8,
-				"current_case": 0,
-				"prime_suspect_set": {
-					"set_name": "EMPTY Set",
-					"lead_suffix": "CUSTOM PLACEMENT",
-					"set_roles": [40000,40001,40002,40003,40004
+				,
+				"clues":[
 					]
-				},
-				"clues": [],
-				"stamp_info": [],
-				"unique_data": "6"
-			},
-			"_is_some": true
-		},
-		"available_events": [],
-		"current_case": {
-			"_value": {
-				"case_type": 0,
-				"board_size": {
-					"x": 4,
-					"y": 4
-				},
-				"tutorial_level": {
-					"_value": 0,
-					"_is_some": false
-				},
-				"began": true,
-				"difficulty_01": 0.14212976396083833,
-				"case_solved": false,
-				"classification_ratio": {
-					"list": [
-						{
-							"Key": 0,
-							"Value": 7
-						},
-						{
-							"Key": 1,
-							"Value": 1
-						},
-						{
-							"Key": 2,
-							"Value": 2
-						},
-						{
-							"Key": 3,
-							"Value": 0
-						}
+				,
+				"stamp_info":[
 					]
-				},
-				"public_classification_ratio": {
-					"list": [
+				,
+				"unique_data":"6"}
+			,
+			"_is_some":true}
+		,
+		"available_events":[
+			]
+		,
+		"current_case":{
+			"_value":{
+				"case_type":0,
+				"board_size":{
+					"x":3,
+					"y":3}
+				,
+				"tutorial_level":{
+					"_value":0,
+					"_is_some":false}
+				,
+				"began":true,
+				"difficulty_01":0.13244780898094178,
+				"case_solved":false,
+				"classification_ratio":{
+					"list":[
 						{
-							"Key": 0,
-							"Value": 7
-						},
+							"Key":0,
+							"Value":3}
+						,
 						{
-							"Key": 1,
-							"Value": 1
-						},
+							"Key":1,
+							"Value":1}
+						,
 						{
-							"Key": 2,
-							"Value": 2
-						},
+							"Key":2,
+							"Value":3}
+						,
 						{
-							"Key": 3,
-							"Value": 0
-						}
+							"Key":3,
+							"Value":0}
+						]
+					}
+				,
+				"public_classification_ratio":{
+					"list":[
+						{
+							"Key":0,
+							"Value":3}
+						,
+						{
+							"Key":1,
+							"Value":1}
+						,
+						{
+							"Key":2,
+							"Value":3}
+						,
+						{
+							"Key":3,
+							"Value":0}
+						]
+					}
+				,
+				"active_case_quirks":[
 					]
-				},
-				"active_case_quirks": [{quirks}],
-				"completed_quirks": [],
-				"suspect_list": [{suspect_list}
-				],
-				"visual_suspect_list": {
-					"_value": [],
-					"_is_some": false
-				},
-				"board_roles": [{roles}],
-				"board_locations": [
+				,
+				"completed_quirks":[
+					]
+				,
+				"suspect_list":[
+					10002,
+					10013,
+					20006,
+					30001,
+					30009,
+					30002,
+					10010,
+					10014,
+					10016,
+					10022,
+					10017]
+				,
+				"visual_suspect_list":{
+					"_value":[
+						]
+					,
+					"_is_some":false}
+				,
+				"board_roles":[
 					{
-						"location_type": 0,
-						"board_position": {
-							"Item1": {CrimeScenePos_x},
-							"Item2": {CrimeScenePos_y}
-						},
-						"unique_data": ""
-					}{other_locations}
-				],
-				"location_disguises": {
-					"list": []
-				},
-				"unique_data": "6,4"
-			},
-			"_is_some": true
-		},
-		"reward": {
-			"_value": {
-				"syndicate_clue": false,
-				"data": "0,0"
-			},
-			"_is_some": true
-		},
-		"pins_data": {
-			"_value": {
-				"pins_data": []
-			},
-			"_is_some": false
-		},
-		"lines_data": {
-			"_value": {
-				"lines_data": [],
-				"suspect_lines": {
-					"list": []
+						"data":{
+							"role":30002,
+							"unique_data":"",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":1,
+							"board_position":{
+								"x":0,
+								"y":0}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":false,
+							"disguise_tainted":false,
+							"lying":true,
+							"obscured":false,
+							"hidden":false,
+							"alignment":1,
+							"classification":2,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":10002,
+								"unique_data":"-1,
+								0",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":true}
+						}
+					,
+					{
+						"data":{
+							"role":10010,
+							"unique_data":"-1,
+							-1",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":2,
+							"board_position":{
+								"x":1,
+								"y":0}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":false,
+							"disguise_tainted":false,
+							"lying":false,
+							"obscured":false,
+							"hidden":false,
+							"alignment":0,
+							"classification":0,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":0,
+								"unique_data":"",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":false}
+						}
+					,
+					{
+						"data":{
+							"role":30009,
+							"unique_data":"9#",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":3,
+							"board_position":{
+								"x":2,
+								"y":0}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":false,
+							"disguise_tainted":false,
+							"lying":true,
+							"obscured":false,
+							"hidden":false,
+							"alignment":1,
+							"classification":2,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":10002,
+								"unique_data":"-1,
+								0",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":true}
+						}
+					,
+					{
+						"data":{
+							"role":20006,
+							"unique_data":"2,
+							7,
+							-1,
+							7",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":4,
+							"board_position":{
+								"x":0,
+								"y":1}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":false,
+							"disguise_tainted":false,
+							"lying":false,
+							"obscured":false,
+							"hidden":false,
+							"alignment":0,
+							"classification":1,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":0,
+								"unique_data":"",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":false}
+						}
+					,
+					{
+						"data":{
+							"role":30001,
+							"unique_data":"",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":5,
+							"board_position":{
+								"x":0,
+								"y":2}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":false,
+							"disguise_tainted":false,
+							"lying":true,
+							"obscured":false,
+							"hidden":false,
+							"alignment":1,
+							"classification":2,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":10016,
+								"unique_data":"-1",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":true}
+						}
+					,
+					{
+						"data":{
+							"role":10022,
+							"unique_data":"",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":6,
+							"board_position":{
+								"x":1,
+								"y":2}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":false,
+							"disguise_tainted":false,
+							"lying":false,
+							"obscured":false,
+							"hidden":false,
+							"alignment":0,
+							"classification":0,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":0,
+								"unique_data":"",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":false}
+						}
+					,
+					{
+						"data":{
+							"role":10002,
+							"unique_data":"-1,
+							0",
+							"ability_exhausted":false,
+							"override_reveal":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_class":{
+								"_value":0,
+								"_is_some":false}
+							,
+							"override_visual_alignment":{
+								"_value":0,
+								"_is_some":false}
+							}
+						,
+						"info":{
+							"address":7,
+							"board_position":{
+								"x":2,
+								"y":2}
+							,
+							"investigated":false,
+							"arrested":false,
+							"dead":false,
+							"tainted":true,
+							"disguise_tainted":false,
+							"lying":false,
+							"obscured":false,
+							"hidden":false,
+							"alignment":0,
+							"classification":0,
+							"blocking_investigation":"",
+							"info_string":{
+								"_value":"",
+								"_is_some":false}
+							,
+							"temp_states":""}
+						,
+						"disguise":{
+							"_value":{
+								"role":0,
+								"unique_data":"",
+								"ability_exhausted":false,
+								"override_reveal":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_class":{
+									"_value":0,
+									"_is_some":false}
+								,
+								"override_visual_alignment":{
+									"_value":0,
+									"_is_some":false}
+								}
+							,
+							"_is_some":false}
+						}
+					]
+				,
+				"board_locations":[
+					{
+						"location_type":0,
+						"board_position":{
+							"Item1":1,
+							"Item2":1}
+						,
+						"unique_data":""}
+					]
+				,
+				"location_disguises":{
+					"list":[
+						]
+					}
+				,
+				"unique_data":"6,
+				0"}
+			,
+			"_is_some":true}
+		,
+		"reward":{
+			"_value":{
+				"syndicate_clue":false,
+				"data":"0,
+				0"}
+			,
+			"_is_some":true}
+		,
+		"pins_data":{
+			"_value":{
+				"pins_data":[
+					]
 				}
-			},
-			"_is_some": false
-		},
-		"strings_data": {
-			"_value": {
-				"strings_data": []
-			},
-			"_is_some": false
+			,
+			"_is_some":false}
+		,
+		"lines_data":{
+			"_value":{
+				"lines_data":[
+					]
+				,
+				"suspect_lines":{
+					"list":[
+						]
+					}
+				}
+			,
+			"_is_some":false}
+		,
+		"strings_data":{
+			"_value":{
+				"strings_data":[
+					]
+				}
+			,
+			"_is_some":false}
 		}
 	}
-}
