@@ -1,118 +1,135 @@
 {
-	"version": "0.5.51",
+	"version": "0.7.21",
 	"data": {
 		"reload_scene": "GameScene",
 		"run_stats": {
 			"run_won": false,
-			"demo_run": true,
-			"play_time": 0.0,
-			"cases_attempted": {
-				"list": []
-			},
-			"cases_solved": {
-				"list": []
-			},
-			"cases_flawless": {
-				"list": []
-			},
-			"regions_completed": {
-				"list": []
-			},
-			"last_region": 4,
-			"combined_case_stats": {
-				"list": []
-			}
+			"lead_stats": []
 		},
-		"completed_regions": [],
-		"available_roles": {available_roles},
-		"region": {
-			"region": 4,
-			"quirks": {quirks},
-			"data": "0,0"
-		},
-		"current_case": {
+		"clues": [],
+		"tutorial": {
 			"_value": {
-				"Item1": {
-					"case_type": 0,
-					"board_size": {
+				"Item1": 0,
+				"Item2": 0
+			},
+			"_is_some": false
+		},
+		"region": 2,
+		"available_leads": [],
+		"current_lead": {
+			"_value": {
+				"case_type": 0,
+				"available_roles": [{available_roles}
+				],
+				"grid_sizes": [
+					{
 						"x": 4,
 						"y": 4
-					},
-					"tutorial_level": {
-						"_value": 0,
-						"_is_some": false
-					},
-					"began": true,
-					"difficulty_01": 0.0,
-					"case_solved": false,
-					"classification_ratio": {
-						"list": [
-							{
-								"Key": 0,
-								"Value": 5
-							},
-							{
-								"Key": 1,
-								"Value": 1
-							},
-							{
-								"Key": 2,
-								"Value": 2
-							},
-							{
-								"Key": 3,
-								"Value": 0
-							}
-						]
-					},
-					"public_classification_ratio": {
-						"list": [
-							{
-								"Key": 0,
-								"Value": 5
-							},
-							{
-								"Key": 1,
-								"Value": 1
-							},
-							{
-								"Key": 2,
-								"Value": 2
-							},
-							{
-								"Key": 3,
-								"Value": 0
-							}
-						]
-					},
-					"active_case_quirks": {quirks},
-					"completed_quirks": [],
-					"suspect_list": [{suspect_list}
-					],
-					"visual_suspect_list": {
-						"_value": [],
-						"_is_some": false
-					},
-					"board_roles": [{roles}],
-					"board_locations": [
-						{
-							"location_type": 0,
-							"board_position": {
-								"Item1": {CrimeScenePos_x},
-								"Item2": {CrimeScenePos_y}
-							},
-							"unique_data": ""
-						}{other_locations}
-					],
-					"location_disguises": {
-						"list": []
-					},
-					"unique_data": "{reputation},{time}"
+					}
+				],
+				"lead_difficulty": {
+					"min": 0.14212976396083833,
+					"max": 0.8621297478675842
 				},
-				"Item2": {
-					"syndicate_clue": false,
-					"data": "0,1"
-				}
+				"max_case": 8,
+				"current_case": 0,
+				"prime_suspect_set": {
+					"set_name": "EMPTY Set",
+					"lead_suffix": "CUSTOM PLACEMENT",
+					"set_roles": [40000,40001,40002,40003,40004
+					]
+				},
+				"clues": [],
+				"stamp_info": [],
+				"unique_data": "6"
+			},
+			"_is_some": true
+		},
+		"available_events": [],
+		"current_case": {
+			"_value": {
+				"case_type": 0,
+				"board_size": {
+					"x": 4,
+					"y": 4
+				},
+				"tutorial_level": {
+					"_value": 0,
+					"_is_some": false
+				},
+				"began": true,
+				"difficulty_01": 0.14212976396083833,
+				"case_solved": false,
+				"classification_ratio": {
+					"list": [
+						{
+							"Key": 0,
+							"Value": 7
+						},
+						{
+							"Key": 1,
+							"Value": 1
+						},
+						{
+							"Key": 2,
+							"Value": 2
+						},
+						{
+							"Key": 3,
+							"Value": 0
+						}
+					]
+				},
+				"public_classification_ratio": {
+					"list": [
+						{
+							"Key": 0,
+							"Value": 7
+						},
+						{
+							"Key": 1,
+							"Value": 1
+						},
+						{
+							"Key": 2,
+							"Value": 2
+						},
+						{
+							"Key": 3,
+							"Value": 0
+						}
+					]
+				},
+				"active_case_quirks": [{quirks}],
+				"completed_quirks": [],
+				"suspect_list": [{suspect_list}
+				],
+				"visual_suspect_list": {
+					"_value": [],
+					"_is_some": false
+				},
+				"board_roles": [{roles}],
+				"board_locations": [
+					{
+						"location_type": 0,
+						"board_position": {
+							"Item1": {CrimeScenePos_x},
+							"Item2": {CrimeScenePos_y}
+						},
+						"unique_data": ""
+					}{other_locations}
+				],
+				"location_disguises": {
+					"list": []
+				},
+				"unique_data": "6,4"
+			},
+			"_is_some": true
+		},
+		"reward": {
+			"_value": {
+				"syndicate_clue": false,
+				"data": "0,0"
 			},
 			"_is_some": true
 		},
@@ -136,7 +153,6 @@
 				"strings_data": []
 			},
 			"_is_some": false
-		},
-		"available_cases": []
+		}
 	}
-}
+}s
