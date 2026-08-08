@@ -19,8 +19,8 @@
 		"current_lead": {
 			"_value": {
 				"case_type": 0,
-				"available_roles": [{available_roles}
-				],
+				"available_roles": {available_roles}
+				,
 				"grid_sizes": [
 					{
 						"x": 4,
