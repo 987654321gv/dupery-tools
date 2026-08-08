@@ -100,7 +100,7 @@
 						}
 					]
 				},
-				"active_case_quirks": [{quirks}],
+				"active_case_quirks": {quirks},
 				"completed_quirks": [],
 				"suspect_list": [{suspect_list}
 				],
