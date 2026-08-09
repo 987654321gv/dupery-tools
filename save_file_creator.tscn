@@ -4,3 +4,4 @@
 
 [node name="Node" type="Node" unique_id=1030242485]
 script = ExtResource("1_ttr2v")
+add_quirks_in_order = false
