@@ -80,7 +80,6 @@ layout_mode = 2
 text = "Choose directory"
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=665618172]
-visible = false
 layout_mode = 2
 text = "Import"
 
@@ -97,6 +96,7 @@ show_hidden_files = true
 
 [node name="SaveFileditor" type="Node" parent="." unique_id=1994137227]
 script = ExtResource("3_r0du0")
+add_quirks_in_order = null
 metadata/_custom_type_script = "uid://bbn4lyfvp1q2n"
 
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_select_dir_pressed"]

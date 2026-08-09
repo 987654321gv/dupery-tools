@@ -81,7 +81,7 @@ func import():
 		return
 	var data:Dictionary=JSON.parse_string(FileAccess.open(
 		options.get_value("saved_values","save_file_path")+"/Dupery.save",
-		FileAccess.READ).get_as_text())["data"]["current_case"]["_value"]["Item1"]
+		FileAccess.READ).get_as_text())["data"]["current_case"]["_value"]
 	quirks=[]
 	for quirk in data["active_case_quirks"]:
 		quirks.append(quirk)
