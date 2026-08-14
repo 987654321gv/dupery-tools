@@ -121,7 +121,7 @@
 				"location_disguises": {
 					"list": []
 				},
-				"unique_data": "6,4"
+				"unique_data": "{reputation},{time}"
 			},
 			"_is_some": true
 		},

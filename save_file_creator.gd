@@ -61,7 +61,7 @@ enum quirks_IDs {EVIL_GAZE=0,
 				n[len(n)-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1] 
 			quirks = n
 @export var ban_list:Array[BoardRole.roles]
-@export var reputation:=5
+@export var reputation:=6
 @export var time:=0
 @export_range(0,1,0.00001) var difficulty:=0.5
 
