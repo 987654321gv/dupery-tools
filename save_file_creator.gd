@@ -53,18 +53,30 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var add_quirks_in_order:=true
 @export var quirks:Array[quirks_IDs]:
 	set(n):
-		if len(n)<=len(quirks) or not add_quirks_in_order:
+		if len(n)<=len(quirks) or not add_quirks_in_order or not Engine.is_editor_hint():
 			quirks = n
 		else:
 			if len(n)>1 and n[len(n)-1] in quirks:
 				var quirks_IDs_values = quirks_IDs.values()
-				n[len(n)-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1] 
+				n[len(n)-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1]
 			quirks = n
-@export var clues:Array[ClueResource]
+			
+@export var clues:Array[ClueResource]:
+	set(n):
+		if len(n)>len(clues) and add_quirks_in_order\
+		 and Engine.is_editor_hint():
+			var quirks_IDs_values = quirks_IDs.values()
+			n[-1]=ClueResource.new()
+			n[-1].immutable=true
+			if len(n)>1:
+				n[-1].quirk = quirks_IDs_values[quirks_IDs_values.find(n[-2].quirk)+1]
+		clues=n
+			
 @export var ban_list:Array[BoardRole.roles]
 @export var reputation:=6
 @export var time:=0
 @export_range(0,1,0.00001) var difficulty:=0.5
+@export var board_size:=Vector2i(4,4)
 
 @export var raw_data:Dictionary
 
@@ -156,5 +168,6 @@ func export() -> void:
 	for clue in clues:
 		clues_strings.append(clue.get_save_file_string())
 	dict_infos["clues"]=",".join(clues_strings)
-	
+	dict_infos["board_size_x"]=board_size.x
+	dict_infos["board_size_y"]=board_size.y
 	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))

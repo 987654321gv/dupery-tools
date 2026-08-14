@@ -22,8 +22,8 @@
 				"available_roles": {available_roles},
 				"grid_sizes": [
 					{
-						"x": 4,
-						"y": 4
+						"x": {board_size_x},
+						"y": {board_size_y}
 					}
 				],
 				"lead_difficulty": {
@@ -49,8 +49,8 @@
 			"_value": {
 				"case_type": 0,
 				"board_size": {
-					"x": 4,
-					"y": 4
+					"x": {board_size_x},
+					"y": {board_size_y}
 				},
 				"tutorial_level": {
 					"_value": 0,
