@@ -60,6 +60,7 @@ enum quirks_IDs {EVIL_GAZE=0,
 				var quirks_IDs_values = quirks_IDs.values()
 				n[len(n)-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1] 
 			quirks = n
+@export var clues:Array[ClueResource]
 @export var ban_list:Array[BoardRole.roles]
 @export var reputation:=6
 @export var time:=0
@@ -68,9 +69,7 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var raw_data:Dictionary
 
 
-
 func import():
-	
 	options.load(path_options)
 	
 	if raw_extract:
@@ -153,5 +152,9 @@ func export() -> void:
 	dict_infos["reputation"]=reputation
 	dict_infos["time"]=time
 	dict_infos["difficulty"]=difficulty
+	var clues_strings:PackedStringArray=[]
+	for clue in clues:
+		clues_strings.append(clue.get_save_file_string())
+	dict_infos["clues"]=",".join(clues_strings)
 	
 	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))

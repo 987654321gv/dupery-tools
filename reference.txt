@@ -35,10 +35,10 @@
 				"prime_suspect_set": {
 					"set_name": "EMPTY Set",
 					"lead_suffix": "CUSTOM PLACEMENT",
-					"set_roles": [40000,40001,40002,40003,40004
+					"set_roles": [
 					]
 				},
-				"clues": [],
+				"clues": [{clues}],
 				"stamp_info": [],
 				"unique_data": "6"
 			},
