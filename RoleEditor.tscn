@@ -107,9 +107,9 @@ item_count = 4
 popup/item_0/text = "innocent"
 popup/item_0/id = 0
 popup/item_1/text = "meddler"
-popup/item_1/id = 2
+popup/item_1/id = 1
 popup/item_2/text = "underling"
-popup/item_2/id = 1
+popup/item_2/id = 2
 popup/item_3/text = "traitor"
 popup/item_3/id = 3
 
