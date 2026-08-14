@@ -139,7 +139,7 @@ func export() -> void:
 	for role in board:
 		if role.role!=0:
 			@warning_ignore("integer_division")
-			list_str_roles.append(role.get_string(address,Vector2i(i%4,i/4)))
+			list_str_roles.append(role.get_string(address,Vector2i(i%board_size.x,i/board_size.x)))
 			suspect_list.append(str(role.role))
 			address+=1
 		i+=1

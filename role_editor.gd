@@ -2,11 +2,23 @@ extends Control
 class_name RoleEditor
 
 signal exit
+signal move_crime_scene
 
 var role_data:=BoardRole.new():
 	set(n):
 		role_data=n
 		%Role.select(%Role.get_item_index(role_data.role))
+		if role_data.role==BoardRole.roles.EMPTY:
+			$HFlowContainer/HFlowContainer.hide()
+			$HFlowContainer/FoldableContainer2.hide()
+			$HFlowContainer/FoldableContainer.hide()
+			$HFlowContainer/Button.show()
+		else:
+			$HFlowContainer/HFlowContainer.show()
+			$HFlowContainer/FoldableContainer2.show()
+			$HFlowContainer/FoldableContainer.show()
+			$HFlowContainer/Button.hide()
+			
 		%Investigated.button_pressed=role_data.investigated
 		%Tainted.button_pressed=role_data.tainted
 		%Arrested.button_pressed=role_data.arrested
@@ -38,11 +50,22 @@ func _ready() -> void:
 
 func _on_option_button_item_selected(index: int) -> void:
 	role_data.role=%Role.get_item_id(index)
+	if role_data.role==BoardRole.roles.EMPTY:
+		$HFlowContainer/HFlowContainer.hide()
+		$HFlowContainer/FoldableContainer2.hide()
+		$HFlowContainer/FoldableContainer.hide()
+		$HFlowContainer/Button.show()
+	else:
+		$HFlowContainer/HFlowContainer.show()
+		$HFlowContainer/FoldableContainer2.show()
+		$HFlowContainer/FoldableContainer.show()
+		$HFlowContainer/Button.hide()
 	%Allignement.select(role_data.alignement)
 	%Classification.select(role_data.classification)
 	%Lying.button_pressed=role_data.lying
 	%Announcement.text=role_data.anouncement
 	%"Unique Data".text=role_data.unique_data
+	
 
 
 func _on_exit_pressed() -> void:
@@ -70,3 +93,8 @@ func _on_disguise_item_selected(index: int) -> void:
 			role_data.disguise=BoardRole.new()
 		role_data.disguise.role=%Disguise.get_item_id(index)
 		%"Disguise Data".text=role_data.disguise.unique_data
+
+
+func _on_button_pressed() -> void:
+	move_crime_scene.emit()
+	exit.emit()

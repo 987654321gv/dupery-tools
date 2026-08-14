@@ -11,6 +11,7 @@ func _ready() -> void:
 	for position_role in $VBoxContainer/GridContainer.get_children():
 		position_role.role_data=BoardRole.new()
 		$SaveFileditor.board.append(position_role.role_data)
+		position_role.move_crime_scene.connect(move_crime_scene.bind(position_role))
 func _on_select_dir_pressed() -> void:
 	$FileDialog.show()
 func _on_file_dialog_dir_selected(dir: String) -> void:
@@ -34,3 +35,10 @@ func _on_import_pressed() -> void:
 		$VBoxContainer/GridContainer.get_child(index).role_data=$SaveFileditor.board[index]
 		$VBoxContainer/GridContainer.get_child(index).on_role_editor_exited()
 		
+func move_crime_scene(position_role):
+	get_position_from_vector($SaveFileditor.crime_scene_pos).disabled=false
+	var pos=$VBoxContainer/GridContainer.get_children().find(position_role)
+	@warning_ignore("integer_division")
+	$SaveFileditor.crime_scene_pos=Vector2i(pos%4,pos/4)
+	get_position_from_vector($SaveFileditor.crime_scene_pos).disabled=true
+	
