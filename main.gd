@@ -11,6 +11,7 @@ func _ready() -> void:
 	options.load(path_options)
 	file_dialog.move_to_center()
 	resized.connect(file_dialog.move_to_center)
+	main_grid.columns=save_file_editor.board_size.x
 	for i in range(save_file_editor.board_size.x * save_file_editor.board_size.y):
 		var position_role:Button = position_button.instantiate()
 		position_role.role_data=BoardRole.new()
