@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bkpu1yp8ui8t0"]
 
-[ext_resource type="PackedScene" uid="uid://b7l6dxxrh8c1h" path="res://Position.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://bwrheh5863eid" path="res://main.gd" id="1_uu6xs"]
 [ext_resource type="Script" uid="uid://bbn4lyfvp1q2n" path="res://save_file_creator.gd" id="3_r0du0"]
 
@@ -26,55 +25,6 @@ layout_mode = 2
 size_flags_vertical = 3
 columns = 4
 
-[node name="Position" parent="VBoxContainer/GridContainer" unique_id=1300263078 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-disabled = true
-
-[node name="Position2" parent="VBoxContainer/GridContainer" unique_id=2104632616 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position3" parent="VBoxContainer/GridContainer" unique_id=87926721 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position4" parent="VBoxContainer/GridContainer" unique_id=1941204279 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position5" parent="VBoxContainer/GridContainer" unique_id=1855038439 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position6" parent="VBoxContainer/GridContainer" unique_id=1452919482 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position7" parent="VBoxContainer/GridContainer" unique_id=785081188 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position8" parent="VBoxContainer/GridContainer" unique_id=1072630213 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position9" parent="VBoxContainer/GridContainer" unique_id=1174059683 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position10" parent="VBoxContainer/GridContainer" unique_id=2083844405 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position11" parent="VBoxContainer/GridContainer" unique_id=1952425484 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position12" parent="VBoxContainer/GridContainer" unique_id=910409968 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position13" parent="VBoxContainer/GridContainer" unique_id=1892285082 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position14" parent="VBoxContainer/GridContainer" unique_id=1349632299 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position15" parent="VBoxContainer/GridContainer" unique_id=279752621 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
-[node name="Position16" parent="VBoxContainer/GridContainer" unique_id=60569049 instance=ExtResource("1_glv2v")]
-layout_mode = 2
-
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=902185516]
 layout_mode = 2
 text = "Choose directory"
@@ -96,7 +46,6 @@ show_hidden_files = true
 
 [node name="SaveFileditor" type="Node" parent="." unique_id=1994137227]
 script = ExtResource("3_r0du0")
-clues = null
 metadata/_custom_type_script = "uid://bbn4lyfvp1q2n"
 
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_select_dir_pressed"]
