@@ -56,9 +56,9 @@ enum quirks_IDs {EVIL_GAZE=0,
 		if len(n)<=len(quirks) or not add_quirks_in_order or not Engine.is_editor_hint():
 			quirks = n
 		else:
-			if len(n)>1 and n[len(n)-1] in quirks:
+			if len(n)>1 and n[-1] in quirks:
 				var quirks_IDs_values = quirks_IDs.values()
-				n[len(n)-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1]
+				n[-1] = quirks_IDs_values[quirks_IDs_values.find(n.max())+1]
 			quirks = n
 			
 @export var clues:Array[ClueResource]:
