@@ -49,6 +49,7 @@ enum quirks_IDs {EVIL_GAZE=0,
 		if n.x<4 and n.y<4 and n.x>=0 and n.y>=0:
 			crime_scene_pos=n
 @export var board:Array[BoardRole]
+@export var other_suspects:Array[BoardRole.roles]
 @export var other_locations:=[]
 @export var add_quirks_in_order:=true
 @export var quirks:Array[quirks_IDs]:
@@ -77,9 +78,12 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var time:=0
 @export_range(0,1,0.00001) var difficulty:=0.5
 @export var board_size:=Vector2i(4,4)
-
+@export var ratio_override:RatioRessource
 @export var raw_data:Dictionary
 
+
+
+	
 
 func import():
 	options.load(path_options)
@@ -132,17 +136,40 @@ func export() -> void:
 		return
 	var ref := FileAccess.get_file_as_string("res://reference.txt")
 	var list_str_roles:PackedStringArray=[]
-	var suspect_list:PackedStringArray=[]
+	var suspect_list:PackedStringArray=other_suspects.duplicate()
 	var dict_infos:={}
 	var address:=1
 	var i:int=0
+	dict_infos["ratio_innocent"]=0
+	dict_infos["ratio_meddler"]=0
+	dict_infos["ratio_underling"]=0
+	dict_infos["ratio_traitor"]=0
+	
 	for role in board:
 		if role.role!=0:
 			@warning_ignore("integer_division")
 			list_str_roles.append(role.get_string(address,Vector2i(i%board_size.x,i/board_size.x)))
-			suspect_list.append(str(role.role))
+			if str(role.role) not in suspect_list:
+				suspect_list.append(str(role.role))
+			if role.disguise!=null and str(role.disguise.role) not in suspect_list:
+				suspect_list.append(str(role.disguise.role))
+			match role.classification:
+				0:
+					dict_infos["ratio_innocent"]+=1
+				1:
+					dict_infos["ratio_meddler"]+=1
+				2:
+					dict_infos["ratio_underling"]+=1
+				3:
+					dict_infos["ratio_traitor"]+=1
 			address+=1
 		i+=1
+	if ratio_override!=null:
+		dict_infos["ratio_innocent"]=ratio_override.innocents
+		dict_infos["ratio_meddler"]=ratio_override.meddlers
+		dict_infos["ratio_underling"]=ratio_override.underlings
+		dict_infos["ratio_traitor"]=ratio_override.traitors
+		
 	dict_infos["roles"]=",".join(list_str_roles)
 	dict_infos["suspect_list"]=",".join(suspect_list)
 	dict_infos["CrimeScenePos_x"]=crime_scene_pos.x

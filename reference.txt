@@ -63,19 +63,19 @@
 					"list": [
 						{
 							"Key": 0,
-							"Value": 7
+							"Value": {ratio_innocent}
 						},
 						{
 							"Key": 1,
-							"Value": 1
+							"Value": {ratio_meddler}
 						},
 						{
 							"Key": 2,
-							"Value": 2
+							"Value": {ratio_underling}
 						},
 						{
 							"Key": 3,
-							"Value": 0
+							"Value": {ratio_traitor}
 						}
 					]
 				},
@@ -83,19 +83,19 @@
 					"list": [
 						{
 							"Key": 0,
-							"Value": 7
+							"Value": {ratio_innocent}
 						},
 						{
 							"Key": 1,
-							"Value": 1
+							"Value": {ratio_meddler}
 						},
 						{
 							"Key": 2,
-							"Value": 2
+							"Value": {ratio_underling}
 						},
 						{
 							"Key": 3,
-							"Value": 0
+							"Value": {ratio_traitor}
 						}
 					]
 				},
