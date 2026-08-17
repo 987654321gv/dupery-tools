@@ -42,6 +42,10 @@ enum quirks_IDs {EVIL_GAZE=0,
 				 BROKEN_RADIO=10026}
 
 
+@export_tool_button("open") var open_action = open
+@export_tool_button("save as") var save_as_action = save_as
+@export var save_name:String
+
 @export_tool_button("import") var import_action = import
 @export_tool_button("export") var export_action = export
 @export var crime_scene_pos:Vector2i:
@@ -82,8 +86,13 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var raw_data:Dictionary
 
 
-
-	
+func save_as():
+	options.load(path_options)
+	options.set_value("saves",save_name,get_exported_string())
+	options.save(path_options)
+func open():
+	options.load(path_options)
+	import_from_string(options.get_value("saves",save_name))
 
 func import():
 	options.load(path_options)
