@@ -134,6 +134,7 @@ enum roles {EMPTY=0,
 @export var arrested := false
 @export var dead := false
 @export var obscured := false
+@export var ability_used := false
 @export_group("override")
 @export_enum("good","evil") var alignement=0
 @export_enum("innocent","meddler","underling","traitor") var classification=0
@@ -152,6 +153,7 @@ func get_string(address:int,position:Vector2i)->String:
 	dict_infos["dead"] = dead
 	dict_infos["obscured"] = obscured
 	dict_infos["lying"] = lying
+	dict_infos["ability_used"] = ability_used
 	if disguise!=null:
 		dict_infos["disguise"]=disguise.get_disguise_text()
 	else:
@@ -163,7 +165,7 @@ func get_string(address:int,position:Vector2i)->String:
 	return FileAccess.get_file_as_string("res://Role_reference.txt").format(dict_infos)
 
 func get_disguise_text():
-	return FileAccess.get_file_as_string("res://Disguise_refernece.txt").format({"role":role,"data":unique_data,"is_some":true})
+	return FileAccess.get_file_as_string("res://Disguise_refernece.txt").format({"role":role,"data":unique_data,"ability_used":ability_used,"is_some":true})
 
 func configure_from_data(data:Dictionary):
 	role=data["data"]["role"]
@@ -176,10 +178,12 @@ func configure_from_data(data:Dictionary):
 	dead=data["info"]["dead"]
 	obscured=data["info"]["obscured"]
 	lying=data["info"]["lying"]
+	ability_used=data["info"]["ability_exhausted"]
 	if data["disguise"]["_is_some"]:
 		disguise=BoardRole.new()
 		disguise.role=data["disguise"]["_value"]["role"]
 		disguise.unique_data=data["disguise"]["_value"]["unique_data"]
+		disguise.ability_used=data["disguise"]["_value"]["ability_used"]
 	if data["info"]["info_string"]["_is_some"]:
 		anouncement=data["info"]["info_string"]["_value"]
 	if roles.find_key(role) == null:

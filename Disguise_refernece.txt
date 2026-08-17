@@ -2,7 +2,7 @@
 								"_value": {
 									"role": {role},
 									"unique_data": "{data}",
-									"ability_exhausted": false,
+									"ability_exhausted": {ability_used},
 									"override_reveal": {
 										"_value": 0,
 										"_is_some": false
