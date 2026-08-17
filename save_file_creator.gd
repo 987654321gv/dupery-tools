@@ -94,9 +94,12 @@ func import():
 		FileAccess.READ).get_as_text())
 		
 		return
-	var data:Dictionary=JSON.parse_string(FileAccess.open(
+	import_from_string(FileAccess.open(
 		options.get_value("saved_values","save_file_path")+"/Dupery.save",
-		FileAccess.READ).get_as_text())["data"]["current_case"]["_value"]
+		FileAccess.READ).get_as_text())
+			
+func import_from_string(source:String):
+	var data:Dictionary=JSON.parse_string(source)["data"]["current_case"]["_value"]
 	quirks=[]
 	for quirk in data["active_case_quirks"]:
 		quirks.append(quirk)
@@ -120,20 +123,11 @@ func import():
 				print("evil found : ",int(role["info"]["address"]))
 				if board[-1].role==BoardRole.roles.SCOUNDREL:
 					print("Warning arrest last !")
-			
-
 
 			
 
-
-	
-
-
-func export() -> void:
+func get_exported_string() -> String:
 	options.load(path_options)
-	if raw_data:
-		FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(JSON.stringify(raw_data))
-		return
 	var ref := FileAccess.get_file_as_string("res://reference.txt")
 	var list_str_roles:PackedStringArray=[]
 	var suspect_list:PackedStringArray=other_suspects.duplicate()
@@ -197,4 +191,12 @@ func export() -> void:
 	dict_infos["clues"]=",".join(clues_strings)
 	dict_infos["board_size_x"]=board_size.x
 	dict_infos["board_size_y"]=board_size.y
-	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(ref.format(dict_infos))
+	return ref.format(dict_infos)
+	
+
+
+func export() -> void:
+	if raw_data:
+		FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(JSON.stringify(raw_data))
+		return
+	FileAccess.open(options.get_value("saved_values","save_file_path")+"/Dupery.save",FileAccess.WRITE).store_string(get_exported_string())
