@@ -2,7 +2,7 @@
 class_name BoardRole
 extends Resource
 
-const disguise_defaults:={"role":0,"data":"","is_some":false}
+const disguise_defaults:={"role":0,"data":"","is_some":false,"ability_used":false}
 
 const dict_names :={10000:"private eye",
 					10001:"reporter",
@@ -183,7 +183,7 @@ func configure_from_data(data:Dictionary):
 		disguise=BoardRole.new()
 		disguise.role=data["disguise"]["_value"]["role"]
 		disguise.unique_data=data["disguise"]["_value"]["unique_data"]
-		disguise.ability_used=data["disguise"]["_value"]["ability_used"]
+		disguise.ability_used=data["disguise"]["_value"]["ability_exhausted"]
 	if data["info"]["info_string"]["_is_some"]:
 		anouncement=data["info"]["info_string"]["_value"]
 	if roles.find_key(role) == null:
