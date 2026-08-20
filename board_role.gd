@@ -178,7 +178,7 @@ func configure_from_data(data:Dictionary):
 	dead=data["info"]["dead"]
 	obscured=data["info"]["obscured"]
 	lying=data["info"]["lying"]
-	ability_used=data["info"]["ability_exhausted"]
+	ability_used=data["data"]["ability_exhausted"]
 	if data["disguise"]["_is_some"]:
 		disguise=BoardRole.new()
 		disguise.role=data["disguise"]["_value"]["role"]
