@@ -21,7 +21,8 @@ const dict_names :={10000:"private eye",
 					10014:"gossip",
 					10015:"clock maker",
 					10016:"empath",
-					10017:"researcher"}
+					10017:"researcher"
+					}
 
 const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.REPORTER:"-1",
@@ -37,18 +38,20 @@ const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.RESEARCHER:"-1",
 			##roles.GENTLEMAN:"{}",
 			##roles.GARGOYLE:'{"no_roles_left":false,"roles_mentioned":[]}',
-			roles.JOURNALIST:"{}",
-			roles.PUBLISHER:'-1',
+			##roles.JOURNALIST:"{}",
+			##roles.PUBLISHER:'-1',
 			roles.BOUNTY_HUNTER:"-1,-1,-1,-1",
 			roles.JINX:"-1",
 			##roles.BELFRY:"-1",
-			roles.SAWBONES:"-1",
+			##roles.SAWBONES:"-1",
 			roles.BARKEEP:"-1",
 			roles.SPECTRE:"-1",
 			roles.POISONER:"-1",
 			roles.CONMAN:"0",
-			roles.DETRACTOR:"-1",
-			roles.KINGPIN:"-1,-1"}
+			##roles.DETRACTOR:"-1",
+			roles.KINGPIN:"-1,-1",
+			##roles.SMOKER:"t"
+			}
 
 const confused := [roles.DRUNKARD,roles.CONMAN]
 
@@ -73,8 +76,8 @@ enum roles {EMPTY=0,
 			RESEARCHER=10017,
 			##GENTLEMAN=10301,
 			##GARGOYLE=10302,
-			JOURNALIST=10022,
-			PUBLISHER=10023,
+			##JOURNALIST=10022,
+			##PUBLISHER=10023,
 			SURGEON=20000,
 			CHATTER_BOX=20001,
 			FALL_GUY=20002,
@@ -87,7 +90,7 @@ enum roles {EMPTY=0,
 			STALKER=20009,
 			JINX=20010,
 			##BELFRY=20303,
-			SAWBONES=20011,
+			##SAWBONES=20011,
 			BARKEEP=30000,
 			CASANOVA=30001,
 			MOBSTER=30002,
@@ -98,7 +101,7 @@ enum roles {EMPTY=0,
 			ACCOUNTANT=30007,
 			CONMAN=30008,
 			SERIAL_KILLER=30009,
-			DETRACTOR = 30011,
+			##DETRACTOR = 30011,
 			##MAID = 30305,
 			JUDGE=40000,
 			IDOL=40001,
@@ -107,9 +110,13 @@ enum roles {EMPTY=0,
 			HITMAN=40004,
 			RECRUITER=40005,
 			##FEARMONGER = 40301,
-			SMOKER = 40008}
+			##SMOKER = 40008
+			}
 			
-
+enum non_demo_roles {
+		TEACHER=10018,
+		
+}
 			
 @export var role:roles=roles.EMPTY:
 	set(n):
