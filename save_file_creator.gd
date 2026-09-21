@@ -68,13 +68,16 @@ enum quirks_IDs {EVIL_GAZE=0,
 			
 @export var clues:Array[ClueResource]:
 	set(n):
-		if len(n)>len(clues) and add_quirks_in_order\
-		 and Engine.is_editor_hint():
+		if len(n)>len(clues) and Engine.is_editor_hint():
 			var quirks_IDs_values = quirks_IDs.values()
 			n[-1]=ClueResource.new()
 			n[-1].immutable=true
 			if len(n)>1:
-				n[-1].quirk = quirks_IDs_values[quirks_IDs_values.find(n[-2].quirk)+1]
+				if add_quirks_in_order:
+					n[-1].quirk = quirks_IDs_values[quirks_IDs_values.find(n[-2].quirk)+1]
+				else:
+					n[-1].quirk=n[-2].quirk
+					n[-1].immutable=n[-2].immutable
 		clues=n
 			
 @export var ban_list:Array[BoardRole.roles]
