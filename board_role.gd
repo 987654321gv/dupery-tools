@@ -40,16 +40,19 @@ const datas={ roles.PRIVATE_EYE:"-1,0",
 			##roles.GARGOYLE:'{"no_roles_left":false,"roles_mentioned":[]}',
 			##roles.JOURNALIST:"{}",
 			##roles.PUBLISHER:'-1',
+			roles.GOOD_COP:"-1",
 			roles.BOUNTY_HUNTER:"-1,-1,-1,-1",
 			roles.JINX:"-1",
 			##roles.BELFRY:"-1",
 			##roles.SAWBONES:"-1",
+			roles.PLANT:"20302",
 			roles.BARKEEP:"-1",
 			roles.SPECTRE:"-1",
 			roles.POISONER:"-1",
 			roles.CONMAN:"0",
 			##roles.DETRACTOR:"-1",
 			roles.KINGPIN:"-1,-1",
+			roles.FEARMONGER:"0"
 			##roles.SMOKER:"t"
 			}
 
@@ -113,7 +116,7 @@ enum roles {EMPTY=0,
 			KINGPIN=40003,
 			HITMAN=40004,
 			RECRUITER=40005,
-			##FEARMONGER = 40301,
+			FEARMONGER = 40301,
 			##SMOKER = 40008
 			}
 			

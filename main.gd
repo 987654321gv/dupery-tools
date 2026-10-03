@@ -19,6 +19,7 @@ func _ready() -> void:
 		position_role.role_data=BoardRole.new()
 		save_file_editor.board.append(position_role.role_data)
 		position_role.move_crime_scene.connect(move_crime_scene.bind(position_role))
+		position_role.add_location.connect(add_location.bind(position_role))
 		if (i==0):
 			position_role.disabled = true
 		main_grid.add_child(position_role)
@@ -39,9 +40,9 @@ func _on_import_pressed() -> void:
 	get_position_from_vector(save_file_editor.crime_scene_pos).disabled=false
 	save_file_editor.import()
 	get_position_from_vector(save_file_editor.crime_scene_pos).disabled=true
-	for __ in range(16-len(save_file_editor.board)):
+	for __ in range(save_file_editor.board_size.x * save_file_editor.board_size.y-len(save_file_editor.board)):
 		save_file_editor.board.append(BoardRole.new())
-	for index in range(16):
+	for index in range(save_file_editor.board_size.x * save_file_editor.board_size.y):
 		main_grid.get_child(index).role_data=save_file_editor.board[index]
 		main_grid.get_child(index).on_role_editor_exited()
 		
@@ -49,6 +50,17 @@ func move_crime_scene(position_role):
 	get_position_from_vector(save_file_editor.crime_scene_pos).disabled=false
 	var pos=main_grid.get_children().find(position_role)
 	@warning_ignore("integer_division")
-	save_file_editor.crime_scene_pos=Vector2i(pos%4,pos/4)
+	save_file_editor.crime_scene_pos=Vector2i(pos%save_file_editor.board_size.x,pos/save_file_editor.board_size.x)
 	get_position_from_vector(save_file_editor.crime_scene_pos).disabled=true
+	
+func add_location(ID:int,unique_data:String,position_role):
+	var pos=main_grid.get_children().find(position_role)
+	var dict_location := {}
+	dict_location["location_type"]=ID
+	@warning_ignore("integer_division")
+	dict_location["board_position"]={"Item1":pos/save_file_editor.board_size.x,"Item2":
+	pos%save_file_editor.board_size.x}
+	dict_location["unique_data"]=unique_data
+	
+	save_file_editor.other_locations.append(dict_location)
 	

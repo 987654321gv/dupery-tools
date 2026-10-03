@@ -24,7 +24,7 @@ unique_name_in_owner = true
 layout_mode = 2
 search_bar_enabled = true
 
-[node name="HFlowContainer" type="HFlowContainer" parent="HFlowContainer" unique_id=1249327771]
+[node name="HFlowContainer" type="HFlowContainer" parent="HFlowContainer" unique_id=1249327771 groups=["shown when filled"]]
 layout_mode = 2
 
 [node name="Investigated" type="CheckBox" parent="HFlowContainer/HFlowContainer" unique_id=703783019]
@@ -52,7 +52,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Obscured"
 
-[node name="FoldableContainer2" type="FoldableContainer" parent="HFlowContainer" unique_id=182701347]
+[node name="FoldableContainer2" type="FoldableContainer" parent="HFlowContainer" unique_id=182701347 groups=["shown when filled"]]
 layout_mode = 2
 title = "Disguise"
 
@@ -73,7 +73,7 @@ text = "Unique data :"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="FoldableContainer" type="FoldableContainer" parent="HFlowContainer" unique_id=1284420425]
+[node name="FoldableContainer" type="FoldableContainer" parent="HFlowContainer" unique_id=1284420425 groups=["shown when filled"]]
 layout_mode = 2
 folded = true
 title = "Overrides"
@@ -133,9 +133,40 @@ text = "Unique data :"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Button" type="Button" parent="HFlowContainer" unique_id=1941505000]
+[node name="Button" type="Button" parent="HFlowContainer" unique_id=1941505000 groups=["shown when empty"]]
 layout_mode = 2
 text = "Move Crime Scene Here"
+
+[node name="HBoxContainer2" type="HFlowContainer" parent="HFlowContainer" unique_id=2004614106 groups=["shown when empty"]]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HFlowContainer/HBoxContainer2" unique_id=500052410]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "add custom location"
+
+[node name="LineEdit" type="LineEdit" parent="HFlowContainer/HBoxContainer2" unique_id=1486775122]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "location ID"
+
+[node name="LineEdit2" type="LineEdit" parent="HFlowContainer/HBoxContainer2" unique_id=580804466]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "unique data"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HFlowContainer" unique_id=1141737124 groups=["shown when empty"]]
+layout_mode = 2
+
+[node name="role_from_ID" type="Button" parent="HFlowContainer/HBoxContainer" unique_id=607061325]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "add role from ID"
+
+[node name="ID overrides" type="LineEdit" parent="HFlowContainer/HBoxContainer" unique_id=612076229]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "custom ID"
 
 [node name="Exit" type="Button" parent="HFlowContainer" unique_id=179143418]
 layout_mode = 2
@@ -144,4 +175,6 @@ text = "Exit"
 [connection signal="item_selected" from="HFlowContainer/Role" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="HFlowContainer/FoldableContainer2/HFlowContainer/Disguise" to="." method="_on_disguise_item_selected"]
 [connection signal="pressed" from="HFlowContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/HBoxContainer2/Button" to="." method="_on_add_location_pressed"]
+[connection signal="pressed" from="HFlowContainer/HBoxContainer/role_from_ID" to="." method="_on_role_from_ID_pressed"]
 [connection signal="pressed" from="HFlowContainer/Exit" to="." method="_on_exit_pressed"]
