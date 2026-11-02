@@ -23,6 +23,7 @@ func _ready() -> void:
 		if (i==0):
 			position_role.disabled = true
 		main_grid.add_child(position_role)
+		
 func _on_select_dir_pressed() -> void:
 	file_dialog.show()
 func _on_file_dialog_dir_selected(dir: String) -> void:
@@ -35,7 +36,7 @@ func _on_export_pressed() -> void:
 	print("export successful!")
 
 func get_position_from_vector(pos_vector:Vector2i)->Button:
-	return main_grid.get_child(pos_vector.x+(pos_vector.y*4))
+	return main_grid.get_child(pos_vector.x+(pos_vector.y*save_file_editor.board_size.x))
 func _on_import_pressed() -> void:
 	get_position_from_vector(save_file_editor.crime_scene_pos).disabled=false
 	save_file_editor.import()

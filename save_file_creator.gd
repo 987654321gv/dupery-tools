@@ -147,7 +147,7 @@ func import_from_string(source:String):
 
 func get_exported_string() -> String:
 	options.load(path_options)
-	var ref := FileAccess.get_file_as_string("res://reference.txt")
+	var ref := FileAccess.get_file_as_string("res://office_reference.txt")
 	var list_str_roles:PackedStringArray=[]
 	var suspect_list:PackedStringArray=other_suspects.duplicate()
 	var dict_infos:={}
