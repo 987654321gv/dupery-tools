@@ -1,5 +1,5 @@
 {
-	"version": "0.7.23",
+	"version": "0.8.1",
 	"data": {
 		"reload_scene": "GameScene",
 		"run_stats": {
@@ -30,13 +30,12 @@
 					"min": {difficulty},
 					"max": {difficulty}
 				},
-				"max_case": 8,
-				"current_case": 0,
+				"max_case": {max_case},
+				"current_case": -1,
 				"prime_suspect_set": {
-					"set_name": "EMPTY Set",
-					"lead_suffix": "CUSTOM PLACEMENT",
-					"set_roles": [
-					]
+					"set_name": "{suspects_set_name}",
+					"lead_suffix": "{lead_name}",
+					"set_roles": {prime_suspects}
 				},
 				"clues": [{clues}],
 				"stamp_info": [],

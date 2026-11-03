@@ -4,6 +4,7 @@ extends Button
 static var window_open:bool = false
 var role_data:=BoardRole.new()
 signal move_crime_scene
+signal add_location(ID:int,unique_data:String)
 
 func _on_pressed() -> void:
 	if window_open: 
@@ -20,6 +21,7 @@ func _on_pressed() -> void:
 	role_editor.exit.connect(on_role_editor_exited)
 	role_editor.role_data=role_data
 	role_editor.move_crime_scene.connect(move_crime_scene.emit)
+	role_editor.add_location.connect(add_location.emit)
 	w.close_requested.connect(role_editor._on_exit_pressed)
 
 func on_role_editor_exited():

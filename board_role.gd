@@ -21,7 +21,8 @@ const dict_names :={10000:"private eye",
 					10014:"gossip",
 					10015:"clock maker",
 					10016:"empath",
-					10017:"researcher"}
+					10017:"researcher"
+					}
 
 const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.REPORTER:"-1",
@@ -43,6 +44,7 @@ const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.JINX:"-1",
 			roles.BELFRY:"-1",
 			roles.SAWBONES:"-1",
+			roles.PLANT:"20302",
 			roles.BARKEEP:"-1",
 			roles.SPECTRE:"-1",
 			roles.POISONER:"-1",
@@ -55,7 +57,8 @@ const datas={ roles.PRIVATE_EYE:"-1,0",
 			roles.SMOKER:"t", #is rep obscured? t/f
 			roles.ARTIST:"-1", #role ID
 			roles.HITMAN: "4#", # kill hour#killed_address1,killed_address2,
-			roles.GOOD_COP:"-1"
+			roles.GOOD_COP:"-1",
+      roles.FEARMONGER:"0",
 			}
 
 const confused := [roles.DRUNKARD,roles.CONMAN]
@@ -79,14 +82,17 @@ enum roles {EMPTY=0,
 			CLOCK_MAKER=10015,
 			EMPATH=10016,
 			RESEARCHER=10017,
-			ARTIST = 10019,
 			POLITICIAN= 10025,
-			GENTLEMAN=10301,
-			GARGOYLE=10302,
+			LIBRARIAN = 10305,
+			TEACHER=10018,
+			ARTIST=10019,
+			TIPSTER=10021,
 			JOURNALIST=10022,
 			PUBLISHER=10023,
-			LIBRARIAN = 10305,
-			GOOD_COP = 10601,
+			GENTLEMAN=10301,
+			GARGOYLE=10302,
+			HERMIT=10303,
+			GOOD_COP=10601,
 			SURGEON=20000,
 			CHATTER_BOX=20001,
 			FALL_GUY=20002,
@@ -100,6 +106,7 @@ enum roles {EMPTY=0,
 			JINX=20010,
 			BELFRY=20303,
 			SAWBONES=20011,
+			PLANT=20302,
 			BARKEEP=30000,
 			CASANOVA=30001,
 			MOBSTER=30002,
@@ -113,6 +120,8 @@ enum roles {EMPTY=0,
 			DETRACTOR = 30011,
 			LANDLORD = 30302,
 			MAID = 30305,
+			SNIPER=30304,
+			BAD_COP=30601,
 			JUDGE=40000,
 			IDOL=40001,
 			CRITIC=40002,
@@ -120,7 +129,9 @@ enum roles {EMPTY=0,
 			HITMAN=40004,
 			RECRUITER=40005,
 			FEARMONGER = 40301,
-			SMOKER = 40008}
+			SMOKER = 40008,
+			INVESTOR =40502,
+			}
 			
 
 			
@@ -191,7 +202,7 @@ func configure_from_data(data:Dictionary):
 	dead=data["info"]["dead"]
 	obscured=data["info"]["obscured"]
 	lying=data["info"]["lying"]
-	ability_used=data["info"]["ability_exhausted"]
+	ability_used=data["data"]["ability_exhausted"]
 	if data["disguise"]["_is_some"]:
 		disguise=BoardRole.new()
 		disguise.role=data["disguise"]["_value"]["role"]

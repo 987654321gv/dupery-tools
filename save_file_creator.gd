@@ -68,14 +68,25 @@ enum quirks_IDs {EVIL_GAZE=0,
 			
 @export var clues:Array[ClueResource]:
 	set(n):
-		if len(n)>len(clues) and add_quirks_in_order\
-		 and Engine.is_editor_hint():
+		if len(n)>len(clues) and Engine.is_editor_hint():
 			var quirks_IDs_values = quirks_IDs.values()
 			n[-1]=ClueResource.new()
 			n[-1].immutable=true
 			if len(n)>1:
-				n[-1].quirk = quirks_IDs_values[quirks_IDs_values.find(n[-2].quirk)+1]
+				if add_quirks_in_order:
+					n[-1].quirk = quirks_IDs_values[quirks_IDs_values.find(n[-2].quirk)+1]
+				else:
+					n[-1].quirk=n[-2].quirk
+					n[-1].immutable=n[-2].immutable
 		clues=n
+		
+@export var max_case:=8
+@export var suspects_set_name:="EMPTY Set"
+@export var lead_name:="CUSTOM PLACEMENT"
+@export var prime_suspects:Array[BoardRole.roles]:
+	set(n):
+		if len(n)<=5:
+			prime_suspects=n
 			
 @export var ban_list:Array[BoardRole.roles]
 @export var reputation:=6
@@ -84,7 +95,6 @@ enum quirks_IDs {EVIL_GAZE=0,
 @export var board_size:=Vector2i(4,4)
 @export var ratio_override:RatioRessource
 @export var raw_data:Dictionary
-
 
 func save_as():
 	options.load(path_options)
@@ -121,7 +131,7 @@ func import_from_string(source:String):
 	board=[]
 	for role in data["board_roles"]:
 		for __ in range(role["info"]["board_position"]["x"]+
-						role["info"]["board_position"]["y"]*4-len(board)):
+						role["info"]["board_position"]["y"]*board_size.x-len(board)):
 			board.append(BoardRole.new())
 			#board[-1].role=BoardRole.roles.EMPTY
 			
@@ -137,7 +147,7 @@ func import_from_string(source:String):
 
 func get_exported_string() -> String:
 	options.load(path_options)
-	var ref := FileAccess.get_file_as_string("res://reference.txt")
+	var ref := FileAccess.get_file_as_string("res://office_reference.txt")
 	var list_str_roles:PackedStringArray=[]
 	var suspect_list:PackedStringArray=other_suspects.duplicate()
 	var dict_infos:={}
@@ -200,6 +210,11 @@ func get_exported_string() -> String:
 	dict_infos["clues"]=",".join(clues_strings)
 	dict_infos["board_size_x"]=board_size.x
 	dict_infos["board_size_y"]=board_size.y
+	dict_infos["prime_suspects"]=prime_suspects
+	dict_infos["suspects_set_name"]=suspects_set_name
+	dict_infos["lead_name"]=lead_name
+	dict_infos["max_case"]=max_case
+	
 	return ref.format(dict_infos)
 	
 
