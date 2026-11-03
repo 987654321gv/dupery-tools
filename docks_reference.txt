@@ -1,0 +1,207 @@
+{
+	"version": "1.0.9",
+	"data": {
+		"reload_scene": "GameScene",
+		"run_stats": {
+			"region": 121,
+			"run_won": false,
+			"lead_stats": [],
+			"current_stats": {
+				"_value": {
+					"case_type": 1,
+					"play_time": 0.0,
+					"lead_completed": false,
+					"cases_attempted": 0,
+					"cases_solved": 0,
+					"cases_flawless": 0,
+					"combined_case_stats": {
+						"investigated": {
+							"list": []
+						},
+						"arrested": {
+							"list": []
+						},
+						"arrested_align": {
+							"list": []
+						},
+						"died": {
+							"list": []
+						},
+						"died_align": {
+							"list": []
+						},
+						"ability_used": {
+							"list": []
+						},
+						"region_data": "0#{\"list\":[]}"
+					}
+				},
+				"_is_some": true
+			}
+		},
+		"clues": [],
+		"tutorial": {
+			"_value": {
+				"Item1": 0,
+				"Item2": 0
+			},
+			"_is_some": false
+		},
+		"region": 121,
+		"available_leads": [],
+		"run_leads": [
+			{
+				"case_type": 1,
+				"available_roles": {available_roles},
+				"grid_sizes": [
+					{
+						"x": {board_size_x},
+						"y": {board_size_y}
+					}
+				],
+				"lead_difficulty": {
+					"min": {difficulty},
+					"max": {difficulty}
+				},
+				"max_case": 21,
+				"current_case": 0,
+				"prime_suspect_set": {
+					"set_name": "EMPTY Set",
+					"lead_suffix": "CUSTOM PLACEMENT",
+					"set_roles": [
+					]
+				},
+				"clues": [{clues}],
+				"stamp_info": [],
+				"unique_data": "5,0,21"
+			}
+		],
+		"in_lead": true,
+		"custom_progressor": {
+			"_value": {
+				"region": 0,
+				"custom_override": "",
+				"available_quirks": {
+					"_value": [],
+					"_is_some": false
+				}
+			},
+			"_is_some": false
+		},
+		"available_events": [],
+		"current_case": {
+			"_value": {
+				"case_type": 1,
+				"board_size": {
+					"x": {board_size_x},
+					"y": {board_size_y}
+				},
+				"tutorial_level": {
+					"_value": 0,
+					"_is_some": false
+				},
+				"began": true,
+				"difficulty_01": {difficulty},
+				"case_solved": false,
+				"classification_ratio": {
+					"list": [
+						{
+							"Key": 0,
+							"Value": {ratio_innocent}
+						},
+						{
+							"Key": 1,
+							"Value": {ratio_meddler}
+						},
+						{
+							"Key": 2,
+							"Value": {ratio_underling}
+						},
+						{
+							"Key": 3,
+							"Value": {ratio_traitor}
+						}
+					]
+				},
+				"public_classification_ratio": {
+					"list": [
+						{
+							"Key": 0,
+							"Value": {ratio_innocent}
+						},
+						{
+							"Key": 1,
+							"Value": {ratio_meddler}
+						},
+						{
+							"Key": 2,
+							"Value": {ratio_underling}
+						},
+						{
+							"Key": 3,
+							"Value": {ratio_traitor}
+						}
+					]
+				},
+				"active_case_quirks": [{quirks}],
+				"completed_quirks": [],
+				"suspect_list": [{suspect_list}],
+				"visual_suspect_list": {
+					"_value": [],
+					"_is_some": false
+				},
+				"board_roles": [{roles}],
+				"board_locations": [
+					{
+						"location_type": 100,
+						"board_position": {
+							"Item1": {CrimeScenePos_x},
+							"Item2": {CrimeScenePos_y}
+						},
+						"unique_data": ""
+					}{other_locations}
+				],
+				"location_disguises": {
+					"list": []
+				},
+				"unique_data": "{reputation},1#0#19#19#f#f,0,f"
+			},
+			"_is_some": true
+		},
+		"reward": {
+			"_value": {
+				"syndicate_clue": false,
+				"data": "0,1"
+			},
+			"_is_some": true
+		},
+		"pins_data": {
+			"_value": {
+				"pins_data": []
+			},
+			"_is_some": false
+		},
+		"lines_data": {
+			"_value": {
+				"lines_data": [],
+				"suspect_lines": {
+					"list": []
+				}
+			},
+			"_is_some": false
+		},
+		"strings_data": {
+			"_value": {
+				"strings_data": []
+			},
+			"_is_some": false
+		},
+		"alt_mode": {
+			"_value": {
+				"Item1": 0,
+				"Item2": ""
+			},
+			"_is_some": false
+		}
+	}
+}
