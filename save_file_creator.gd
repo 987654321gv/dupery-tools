@@ -48,6 +48,9 @@ enum quirks_IDs {EVIL_GAZE=0,
 
 @export_tool_button("import") var import_action = import
 @export_tool_button("export") var export_action = export
+
+@export var region:BoardRole.regions=BoardRole.regions.OFFICE
+
 @export var crime_scene_pos:Vector2i:
 	set(n):
 		if n.x<4 and n.y<4 and n.x>=0 and n.y>=0:
@@ -147,7 +150,7 @@ func import_from_string(source:String):
 
 func get_exported_string() -> String:
 	options.load(path_options)
-	var ref := FileAccess.get_file_as_string("res://office_reference.txt")
+	var ref := FileAccess.get_file_as_string(BoardRole.dict_refs_per_regions[region])
 	var list_str_roles:PackedStringArray=[]
 	var suspect_list:PackedStringArray=other_suspects.duplicate()
 	var dict_infos:={}
@@ -195,11 +198,12 @@ func get_exported_string() -> String:
 			other_locations_str.append(str(location))
 		dict_infos["other_locations"]=","+(",".join(other_locations_str))
 	dict_infos["quirks"]=quirks
-	var available_roles:=[]
-	for role in BoardRole.roles.values():
-		if role not in ban_list and role != 0:
-			available_roles.append(role)
-	dict_infos["available_roles"]=available_roles
+	dict_infos["available_roles"]=BoardRole.dict_roles_in_region[region]
+	#var available_roles:=[]
+	#for role in BoardRole.roles.values():
+	#	if role not in ban_list and role != 0:
+	#		available_roles.append(role)
+	#dict_infos["available_roles"]=available_roles
 	print(dict_infos["available_roles"])
 	dict_infos["reputation"]=reputation
 	dict_infos["time"]=time

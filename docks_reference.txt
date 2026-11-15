@@ -64,7 +64,7 @@
 					"max": {difficulty}
 				},
 				"max_case": 21,
-				"current_case": 0,
+				"current_case": -1,
 				"prime_suspect_set": {
 					"set_name": "EMPTY Set",
 					"lead_suffix": "CUSTOM PLACEMENT",
@@ -73,7 +73,7 @@
 				},
 				"clues": [{clues}],
 				"stamp_info": [],
-				"unique_data": "5,0,21"
+				"unique_data": "5,-1,21"
 			}
 		],
 		"in_lead": true,
@@ -143,7 +143,7 @@
 						}
 					]
 				},
-				"active_case_quirks": [{quirks}],
+				"active_case_quirks":{quirks},
 				"completed_quirks": [],
 				"suspect_list": [{suspect_list}],
 				"visual_suspect_list": {

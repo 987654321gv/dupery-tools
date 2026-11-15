@@ -9,7 +9,7 @@
 			"current_stats": {
 				"_value": {
 					"case_type": 2,
-					"play_time": 2.232870101928711,
+					"play_time": 0,
 					"lead_completed": false,
 					"cases_attempted": 0,
 					"cases_solved": 0,
@@ -64,7 +64,7 @@
 					"max": {difficulty}
 				},
 				"max_case": 9,
-				"current_case": 0,
+				"current_case": -1,
 				"prime_suspect_set": {
 					"set_name": "EMPTY Set",
 					"lead_suffix": "CUSTOM PLACEMENT",
